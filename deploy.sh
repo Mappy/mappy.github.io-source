@@ -3,6 +3,8 @@ BRANCH=master
 TARGET_REPO=Mappy/mappy.github.io.git
 PELICAN_OUTPUT_FOLDER=output
 
+echo env
+
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo -e "Starting to deploy to Github Pages\n"
     if [ "$TRAVIS" == "true" ]; then
