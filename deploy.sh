@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 BRANCH=master
-TARGET_REPO=Mappy/mappy.github.io.git
+TARGET_REPO=Mappy/mappy.github.io-source.git
 PELICAN_OUTPUT_FOLDER=output
 
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
