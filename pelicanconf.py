@@ -10,7 +10,7 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
 
-THEME = 'theme/tuxlite_zf' 
+THEME = 'theme/gum' 
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'feeds/rss.xml'
@@ -22,8 +22,8 @@ LINKS =  (('Mappy', 'http://www.mappy.com/'),
           )
 
 # Social widget
-SOCIAL = (('Twitter', 'https://twitter.com/Mappy'),
-          )
+#SOCIAL = (('Twitter', 'https://twitter.com/Mappy'),
+#          )
 
 DEFAULT_PAGINATION = 10
 
@@ -31,3 +31,6 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 STATIC_PATHS = ['images',]
+
+TWITTER_URL = 'https://twitter.com/Mappy'
+GITHUB_URL = 'https://github.com/Mappy'
