@@ -19,7 +19,9 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS =  (('Mappy', 'http://www.mappy.com/'),
-          )
+          ('Blog Mappy', 'corporate.mappy.com'),
+          ('API Mappy', 'http://corporate.mappy.com/faq/integrez-mappy/'),
+         )
 
 # Social widget
 #SOCIAL = (('Twitter', 'https://twitter.com/Mappy'),
@@ -34,3 +36,4 @@ STATIC_PATHS = ['images',]
 
 TWITTER_URL = 'https://twitter.com/Mappy'
 GITHUB_URL = 'https://github.com/Mappy'
+FACEBOOK_URL = 'https://www.facebook.com/MappyOnline'

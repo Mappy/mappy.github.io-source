@@ -38,6 +38,16 @@
 </ul>
 {% endif %}
 
+{% if LINKS %}
+<nav class="widget">
+  <h4>Links</h4>
+  <ul>
+  {% for name, url in LINKS %}
+    <li><a href="{{ url|e }}">{{ name }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
+{% endif %}
 
 {% if SOCIAL %}
 <nav class="widget">
