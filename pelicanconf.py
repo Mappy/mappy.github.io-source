@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Mappy'
 SITENAME = u'Mappy Labs'
-SITEURL = 'labs.mappy.com'
+SITEURL = ''
 
 TIMEZONE = 'Europe/Paris'
 
