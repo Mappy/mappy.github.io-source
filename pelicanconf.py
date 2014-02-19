@@ -19,7 +19,7 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS =  (('Mappy', 'http://www.mappy.com/'),
-          ('Blog Mappy', 'corporate.mappy.com'),
+          ('Blog Mappy', 'http://corporate.mappy.com'),
           ('API Mappy', 'http://corporate.mappy.com/faq/integrez-mappy/'),
          )
 
