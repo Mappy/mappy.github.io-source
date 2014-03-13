@@ -80,7 +80,7 @@ Even if Solr [FunctionQuery](http://wiki.apache.org/solr/FunctionQuery) gives us
 
     geoboost(epsilon, mu, lat_min, lng_min, lat_max, lng_max)
 
-We have to write a parser (i.e. a class implementing [org.apache.solr.search.ValueSourceParser](http://wiki.apache.org/solr/SolrPlugins#ValueSourceParser) that reads the value from the left to the right
+We have to write a parser (i.e. a class implementing [org.apache.solr.search.ValueSourceParser](http://wiki.apache.org/solr/SolrPlugins#ValueSourceParser) that reads the value from the left to the right)
     
     :::java
     public class GeoBoostValueParser extends ValueSourceParser {
