@@ -10,7 +10,7 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
 
-THEME = 'theme/gum' 
+THEME = 'theme/mappy'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'feeds/rss.xml'
