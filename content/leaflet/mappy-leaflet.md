@@ -7,13 +7,17 @@ Summary: mappy.com utilise dorénavant l’API OpenSource Leaflet plutôt que so
 
 # Nouvelle version du site, nouvelle cartographie
 
-En mai 2014, une nouvelle version du site Mappy a vu le jour.
+En mai 2014, une nouvelle version du site Mappy a vu le jour :
+
+![Version 4](images/leaflet/hp-v4.png)
+![Version 5](images/leaflet/hp-v5.png)
+
 
 Cette version a entraîné bon nombre de refactoring technique (dont un passage à Backbone par exemple) mais la plus impactante fût la décision de remplacer l’API cartographique JavaScript historique, permettant de manipuler la carte sur le site, par [Leaflet](http://leafletjs.com/).
 
-Leaflet est une l’une des API de cartographie JavaScript OpenSource la plus connue et active. Utilisée par de nombreux sites importants - aussi bien généralistes (Flickr, Foursquare, Pinterest) que spécialistes de la cartographie (Mapbox, OpenStreetMap) -, elle dispose de plus de 175 contributeurs.
+Leaflet est une l’une des API de cartographie JavaScript OpenSource la plus connue et active. Utilisée par de nombreux sites importants, aussi bien généralistes (Flickr, Foursquare, Pinterest) que spécialistes de la cartographie (Mapbox, OpenStreetMap), elle dispose de plus de 175 contributeurs.
 
-Plus exactement, c’est une surcouche à l’API Leaflet qui a été développée, permettant de pré-configurer différents services, comme l’utilisation des tuiles (images carrés les unes à côté des autres permettant de dessiner la carte) Mappy ainsi que les services de localisation et d’itinéraires.
+Plus exactement, c’est une surcouche à l’API Leaflet qui a été développée sous la forme d’un plugin, permettant de pré-configurer différents services, comme l’utilisation des tuiles (images carrés les unes à côté des autres permettant de dessiner la carte) Mappy ainsi que les services de localisation et d’itinéraires.
 
 Utilisé aujourd’hui par le site [fixe](http://www.mappy.com), le site [mobile](http://m.mappy.com) ainsi que le [widget](http://widgets.mappy.com/map/documentation), cette API est également distribuée aux partenaires. N'hésitez pas à consulter cette page sur l’[intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/) pour plus d'informations.
 
