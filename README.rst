@@ -18,7 +18,7 @@ How to build locally
 
 Install dependencies via ``pip install -r requirements.txt`` or ``apt-get install python-pelican fabric``.
 
-Use `make html` to transform Markdown to HTML then `make html` to launch a local webserver.
+Use ``make html`` to transform Markdown to HTML then ``make serve`` to launch a local webserver.
 
 You can see your work at http://localhost:8000.
 
