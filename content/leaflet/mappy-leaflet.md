@@ -20,11 +20,11 @@ En mai 2014, une nouvelle version du site Mappy a vu le jour :
 
 Cette version a entraîné bon nombre de refactoring technique (dont un passage à Backbone par exemple) mais la plus impactante fût la décision de remplacer l’API cartographique JavaScript historique, permettant de manipuler la carte sur le site, par [Leaflet](http://leafletjs.com/).
 
-Leaflet est l’une des API de cartographie JavaScript OpenSource la plus connue et active. Utilisée par de nombreux sites importants, aussi bien généralistes (Flickr, Foursquare, Pinterest) que spécialistes de la cartographie (Mapbox, OpenStreetMap), elle dispose de plus de 175 contributeurs.
+Leaflet est une API de cartographie JavaScript OpenSource parmis les plus connues et actives. Utilisée par de nombreux sites importants, aussi bien généralistes (Flickr, Foursquare, Pinterest) que spécialistes de la cartographie (Mapbox, OpenStreetMap), elle dispose de plus de 175 contributeurs.
 
 ## La compatibilité de la cartographie Mappy avec Leaflet
 
-Notre plateforme cartographique disposent de certaines spécificités par rapport aux standards actuels :
+Notre plateforme cartographique dispose de certaines spécificités par rapport aux standards actuels :
 
    - une projection [Gall](http://spatialreference.org/ref/esri/world-gall-stereographic/),
    - des tuiles de 384 pixels de large (au lieu des 256 généralement utilisés par les autres acteurs cartographique),
@@ -32,9 +32,7 @@ Notre plateforme cartographique disposent de certaines spécificités par rappor
 
 Elles ont été intégrés sous la forme d’un plugin Leaflet, inspiré du plugin [Mapbox](https://www.mapbox.com).
 
-Nous dénomons ce plugin notre “API Mappy”.
-
-Utilisé aujourd’hui par le site [fixe](http://www.mappy.com), le site [mobile](http://m.mappy.com) ainsi que le [widget](http://widgets.mappy.com/map/documentation), cette API est également distribuée aux partenaires. Si vous êtes intéressez, je vous invite à consulter [la page dédiée à intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/).
+Utilisé aujourd’hui par le site [fixe](http://www.mappy.com), le site [mobile](http://m.mappy.com) ainsi que le [widget](http://widgets.mappy.com/map/documentation), cette API est également distribuée aux partenaires. Si vous êtes intéressés, je vous invite à consulter [la page dédiée à intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/).
 
 ## Contributions
 
@@ -42,6 +40,6 @@ Depuis cette migration à Leaflet, nous avons apporté quelques contributions so
 
 ## A l’avenir
 
-Bref, ce passage à Leaflet ne nous apporte que des avantages et nous avons hâte de proposer d’autres “pull requests” ou proposition de plugin.
+Au final, ce passage à Leaflet ne nous apporte que des avantages et nous avons hâte de proposer d’autres “pull requests” ou plugins.
 
-Autre avantage à l'utilisation de Leaflet, la migration vers des projections plus standard aura un très faible coût, et aucune migration d'API ne sera nécessaire.
+Autre avantage à l'utilisation de Leaflet, la migration vers des projections plus standard - un de nos projet 2015 - aura un très faible coût, et aucune migration d'API ne sera nécessaire.
