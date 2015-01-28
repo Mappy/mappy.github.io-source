@@ -30,9 +30,9 @@ Notre plateforme cartographique dispose de certaines spécificités par rapport 
    - des tuiles de 384 pixels de large (au lieu des 256 généralement utilisés par les autres acteurs cartographique),
    - 13 niveaux de zoom, avec un facteur 3 entre chaque niveau (au lieu de 20 niveaux et d'un facteur x2).
 
-Elles ont été intégrés sous la forme d’un plugin Leaflet, inspiré du plugin [Mapbox](https://www.mapbox.com).
+Elles ont été intégrés sous la forme d’un plugin Leaflet, inspiré du plugin [Mapbox](https://www.mapbox.com/developers/api/). Ce plugin étend l’API Leaflet et intégre également d’autres méthodes pour effectuer des recherches géographiques, des recherches géographiques inversés (quel est le lieu pour telle latitude / longitude ?) et enfin des recherches d’itinéraires via les services de Mappy.
 
-Utilisé aujourd’hui par le site [fixe](http://www.mappy.com), le site [mobile](http://m.mappy.com) ainsi que le [widget](http://widgets.mappy.com/map/documentation), cette API est également distribuée aux partenaires. Si vous êtes intéressés, je vous invite à consulter [la page dédiée à intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/).
+Utilisée aujourd’hui par le site [fixe](http://www.mappy.com), le site [mobile](http://m.mappy.com) et le [widget](http://widgets.mappy.com/map/documentation), cette API est également distribuée aux partenaires. Si vous êtes intéressés, je vous invite à consulter [la page dédiée à intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/).
 
 ## Contributions
 
