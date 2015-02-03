@@ -18,9 +18,9 @@ En mai 2014, une nouvelle version du site Mappy a vu le jour :
    Nouvelle version (5)
 
 
-Cette version a entraîné bon nombre de refactoring technique (dont un passage à Backbone par exemple) mais la plus impactante fût la décision de remplacer l’API cartographique JavaScript historique, permettant de manipuler la carte sur le site, par [Leaflet](http://leafletjs.com/).
+Cette version a entraîné bon nombre de refactoring technique (comme un passage à Backbone par exemple) dont le plus impactant fût la décision de remplacer l’API cartographique JavaScript historique par [Leaflet](http://leafletjs.com/).
 
-Leaflet est une API de cartographie JavaScript OpenSource parmis les plus connues et actives. Utilisée par de nombreux sites importants, aussi bien généralistes (Flickr, Foursquare, Pinterest) que spécialistes de la cartographie (Mapbox, OpenStreetMap), elle dispose de plus de 175 contributeurs.
+Leaflet est une API de cartographie JavaScript OpenSource parmi les plus connues et actives. Utilisée par de nombreux sites importants, aussi bien généralistes (Flickr, Foursquare, Pinterest) que spécialistes de la cartographie (Mapbox, OpenStreetMap), elle dispose de plus de 175 contributeurs.
 
 ## La compatibilité de la cartographie Mappy avec Leaflet
 
@@ -30,7 +30,7 @@ Notre plateforme cartographique dispose de certaines spécificités par rapport 
    - des tuiles de 384 pixels de large (au lieu des 256 généralement utilisés par les autres acteurs cartographique),
    - 13 niveaux de zoom, avec un facteur 3 entre chaque niveau (au lieu de 20 niveaux et d'un facteur x2).
 
-Elles ont été intégrés sous la forme d’un plugin Leaflet, inspiré du plugin [Mapbox](https://www.mapbox.com/developers/api/). Ce plugin étend l’API Leaflet et intégre également d’autres méthodes pour effectuer des recherches géographiques, des recherches géographiques inversés (quel est le lieu pour telle latitude / longitude ?) et enfin des recherches d’itinéraires via les services de Mappy.
+Elles ont été intégrées sous la forme d’un plugin Leaflet, inspiré du plugin [Mapbox](https://www.mapbox.com/developers/api/). Ce plugin étend l’API Leaflet et intègre également d’autres méthodes pour effectuer des recherches géographiques, des recherches géographiques inversées (Retrouver une adresse depuis des coordonnées) et enfin des recherches d’itinéraires via les services de Mappy.
 
 Utilisée aujourd’hui par le site [fixe](http://www.mappy.com), le site [mobile](http://m.mappy.com) et le [widget](http://widgets.mappy.com/map/documentation), cette API est également distribuée aux partenaires. Si vous êtes intéressés, je vous invite à consulter [la page dédiée à intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/).
 
