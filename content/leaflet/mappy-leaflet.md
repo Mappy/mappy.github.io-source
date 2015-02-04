@@ -32,7 +32,7 @@ Notre plateforme cartographique dispose de certaines spécificités par rapport 
 
 Elles ont été intégrées sous la forme d’un plugin Leaflet, inspiré du plugin [Mapbox](https://www.mapbox.com/developers/api/). Ce plugin étend l’API Leaflet et intègre également d’autres méthodes pour effectuer des recherches géographiques, des recherches géographiques inversées (Retrouver une adresse depuis des coordonnées) et enfin des recherches d’itinéraires via les services de Mappy.
 
-Utilisée aujourd’hui par le site [fixe](http://www.mappy.com), le site [mobile](http://m.mappy.com) et le [widget](http://widgets.mappy.com/map/documentation), cette API est également distribuée aux partenaires. Si vous êtes intéressés, je vous invite à consulter [la page dédiée à intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/).
+Utilisée aujourd’hui par le site [fixe](http://www.mappy.com), le site [mobile](http://m.mappy.com) et le widget, cette API est également distribuée aux partenaires. Si vous êtes intéressés, je vous invite à consulter [la page dédiée à intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/).
 
 ## Contributions
 
