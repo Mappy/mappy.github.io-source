@@ -1,5 +1,5 @@
 Title: mappy.com migre vers Leaflet
-Date: 2015-01-22
+Date: 2015-02-04
 Slug: mappy-com-migre-vers-leaflet
 Authors: Michael Cellier, Grégory Paul
 Tags: Leaflet,OpenSource,French,JavaScript
