@@ -7,15 +7,11 @@ Summary: Ce plugin leaflet permet de définir une zone utile où seront placés 
 
 # Un plugin Leaflet pour le site mappy.com
 
-### Une nouvelle version du site, avec Leaflet
-
-En mai 2014, une nouvelle version du site Mappy a vu le jour.
-
-Cette mise à jour du site a permis de remplacer l’API JavaScript de cartographie, historiquement "maison", par une nouvelle API bâtie sur Leaflet comme le détaille un [billet précédent](|filename|mappy-leaflet.md).
+Lors de la mise en place de Leaflet sur mappy.com, (comme présenté dans un [billet précédent](|filename|mappy-leaflet.md)), nous avons eu l'occasion de développer un plugin Leaflet, proposé en open-source.
 
 ### Mise en avant de la carte
 
-L’un des objectifs de cette version fût de mettre en avant la carte dans l’interface (elle n’occupait qu’une petite partie de l’interface de la version précédente). Ainsi, sur les pages de fiche POI ou sur la feuille de route, la carte occupe tout l’écran, du haut en bas de l’écran.
+L’un des objectifs de cette nouvelle version fût de mettre en avant la carte dans l’interface, qui n'occupait qu’une petite partie de l’interface de la version précédente. Ainsi, sur les pages de fiche POI ou sur la feuille de route, la carte occupe tout l’écran, du haut en bas de l’écran.
 
 Cela est surtout visible sur les grandes résolutions, où chaque bord laisse place à la carte comme le témoignent les captures d’écran suivantes :
 
@@ -27,8 +23,8 @@ Cela est surtout visible sur les grandes résolutions, où chaque bord laisse pl
 
    [Fiche POI](http://fr.mappy.com/poi/51f0bde784aebbc34d4a0cc7)
 
-Comme vous pouvez le voir sur les images ci-dessus et comme la carte occupe presque tout l’écran, le marqueur ou l’itinéraire de la carte n’y sont pas centrés. Le centre de la carte est au centre de l’écran, caché derrière les éléments HTML.
-Cela est plus visible lorsque l’on rend transparents ces éléments HTML comme le montrent les images suivantes :
+Comme on peut le voir sur les images ci-dessus, et vu que la carte occupe presque tout l’écran, les informations - marqueurs et polyline - sont pas centrés. Le centre de la carte correspond au centre de l’écran, caché derrière les éléments HTML.
+Cela est plus visible lorsque l’on rend transparents ces éléments HTML comme le montrent les captures suivantes :
 
 ![Itinéraire avec fond transparent](images/leaflet-active-area/iti-transparent.png)
 
@@ -43,7 +39,7 @@ Les appels à l’API Leaflet (centrage de la carte, centrage de la vue en fonct
 
 ### Le plugin Leaflet-active-area
 
-Afin de pouvoir afficher des marqueurs ou un itinéraire de façon décentrée, nous avons développé un plugin Leaflet pour abstraire ce comportement.
+Afin de pouvoir afficher des marqueurs ou un itinéraire de façon excentrée, nous avons développé un plugin Leaflet pour abstraire ce comportement.
 
 Il s’agit du plugin [Leaflet-active-area](https://github.com/Mappy/Leaflet-active-area) qui, comme le montre la [page d’exemple](http://techblog.mappy.com/Leaflet-active-area/examples/index.html), permet d’appeler les méthodes usuelles de Leaflet telles que setView, setZoom, fitBounds tout en "centrant" la carte à partir d’une autre zone.
 
