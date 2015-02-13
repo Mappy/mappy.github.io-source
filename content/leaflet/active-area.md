@@ -1,5 +1,5 @@
 Title: Un plugin Leaflet pour le site Mappy (Leaflet-active-area)
-Date: 2015-01-13
+Date: 2015-02-13
 Slug: leaflet-active-area
 Author: Mappy
 Tags: Leaflet,OpenSource,French
@@ -11,8 +11,7 @@ Summary: Ce plugin leaflet permet de définir une zone utile où seront placés 
 
 En mai 2014, une nouvelle version du site Mappy a vu le jour.
 
-Cette mise à jour du site a permis de remplacer l’API JavaScript de cartographie, historiquement "maison", par une nouvelle API bâtie sur Leaflet.
-Cette API est d’ailleurs distribuée, confère la page sur l’[intégration de nos services dans vos produits](http://corporate.mappy.com/faq/integrez-mappy/).
+Cette mise à jour du site a permis de remplacer l’API JavaScript de cartographie, historiquement "maison", par une nouvelle API bâtie sur Leaflet comme le détaille un [billet précédent](|filename|mappy-leaflet.md).
 
 ### Mise en avant de la carte
 
