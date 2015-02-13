@@ -45,5 +45,8 @@ Il s’agit du plugin [Leaflet-active-area](https://github.com/Mappy/Leaflet-act
 
 Le principe est de définir une classe CSS, positionnée de façon absolue, qui sera prise en compte comme zone active de la carte. Ainsi, le centre de la carte sera le centre de cette zone et l’ensemble des marqueurs ou tracés y seront placés.
 
-Le plugin est disponible sur [github](https://github.com/Mappy/Leaflet-active-area) et listé sous [“Other Plugins and Libraries”](http://leafletjs.com/plugins.html#other-plugins-and-libraries) du site leaflet.
+### Disponible sous license Apache 2.0
 
+Il nous a paru évident, utilisant une API open-source utilisée et développée par une énorme communité de développeurs, de proposer ce plugin en open-source. Il est disponible sur [github](https://github.com/Mappy/Leaflet-active-area) et référencé dans [“la page des plugins”](http://leafletjs.com/plugins.html#other-plugins-and-libraries) du site leaflet.
+
+A ce jour, nous avons même reçu la contribution de plusieurs développeurs hors Mappy avec l'ouverture - et l'acceptation - de 4 pull requests, la création puis la résolution de plusieurs issues. N'hésitez pas à contribuer !
