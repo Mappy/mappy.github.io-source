@@ -1,5 +1,5 @@
 Title: Un plugin Leaflet pour le site Mappy (Leaflet-active-area)
-Date: 2015-02-13
+Date: 2015-02-16
 Slug: leaflet-active-area
 Author: Mappy
 Tags: Leaflet,OpenSource,French
