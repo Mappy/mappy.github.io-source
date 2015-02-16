@@ -23,7 +23,7 @@ Cela est surtout visible sur les grandes résolutions, où chaque bord laisse pl
 
    [Fiche POI](http://fr.mappy.com/poi/51f0bde784aebbc34d4a0cc7)
 
-Comme on peut le voir sur les images ci-dessus, et vu que la carte occupe presque tout l’écran, les informations - marqueurs et polyline - sont pas centrés. Le centre de la carte correspond au centre de l’écran, caché derrière les éléments HTML.
+Comme on peut le voir sur les images ci-dessus, et vu que la carte occupe presque tout l’écran, les informations - marqueurs et polyline - ne sont pas centrées. Le centre de la carte correspond au centre de l’écran, caché derrière les éléments HTML.
 Cela est plus visible lorsque l’on rend transparents ces éléments HTML comme le montrent les captures suivantes :
 
 ![Itinéraire avec fond transparent](images/leaflet-active-area/iti-transparent.png)
