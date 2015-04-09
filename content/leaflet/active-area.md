@@ -2,7 +2,7 @@ Title: Un plugin Leaflet pour le site Mappy (Leaflet-active-area)
 Date: 2015-02-16
 Slug: leaflet-active-area
 Author: Mappy
-Tags: Leaflet,OpenSource,French
+Tags: Leaflet,OpenSource,French,JavaScript
 Summary: Ce plugin leaflet permet de définir une zone utile où seront placés marqueurs et tracés n’occupant qu’une partie de la carte.
 
 # Un plugin Leaflet pour le site mappy.com
