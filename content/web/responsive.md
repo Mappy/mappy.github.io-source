@@ -5,7 +5,7 @@ Author: Mappy
 Tags: French,JavaScript,responsive
 Summary: TODO TODO TODO
 
-Depuis le mercredi 20 mai, mappy.com propose un unique site pour tous les navigateurs de bureau ou mobile, au lieu de 2 sites dont un dédiée au mobile comme auparavant. L’approche de type "responsive design" a été rétenue.
+Depuis le mercredi 20 mai, mappy.com propose un unique site pour tous les navigateurs de bureau ou mobile, au lieu de 2 sites dont un dédié au mobile comme auparavant. L’approche de type "responsive design" a été rétenue.
 Ce billet a pour but de présenter notre contexte et notre parcours vers cette décision.
 
 # Historiquement 2 sites
@@ -17,7 +17,7 @@ D’abord via des technologies de type BkRender (pour les téléphones très lim
 
 C’est après plusieurs mois de maturation et après avoir validé une preuve de concept sur l’adaptation du site principal au "responsive" que la décision de ne servir qu’un unique site a été prise.
 
-Le principal avantage est d’éviter le développement des histoires utilisateurs (User Stories) en double, à la fois sur le site principal puis sur le site mobile. En plus du développement, un ensemble de tâches et d’opérations annexes effectués sur chacun de nos produits sont éliminés en supprimant un produit (tests, correction de jira, déploiements, maintenance des serveurs, etc).
+Le principal avantage est d’éviter le développement des histoires utilisateurs (User Stories) en double, à la fois sur le site principal puis sur le site mobile. En plus du développement, un ensemble de tâches et d’opérations annexes effectuées sur chacun de nos produits sont éliminés en supprimant un produit (tests, correction de jira, déploiements, maintenance des serveurs, etc).
 
 Un autre avantage est le fait qu’une nouvelle histoire utilisateur impactera en même temps l’audience fixe et mobile.
 Auparavant, il arrivait que certaines fonctionnalités soit d’abord réalisé sur le site fixe, puis quelques itérations suviantes sur le site mobile.
