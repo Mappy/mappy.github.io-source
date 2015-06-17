@@ -1,21 +1,33 @@
 Title: Mappy.com dorénavant responsive !
-Date: 2015-05-22
+Date: 2015-06-15
 Slug: mappy-responsive
 Author: Mappy
 Tags: French,JavaScript,responsive
-Summary: TODO TODO TODO
+Summary: Explications du remplacement de 2 sites par un site responsive.
 
-Depuis le mercredi 20 mai, mappy.com propose un unique site pour tous les navigateurs de bureau ou mobile, au lieu de 2 sites dont un dédié au mobile comme auparavant. L’approche de type "responsive design" a été rétenue.
-Ce billet a pour but de présenter notre contexte et notre parcours vers cette décision.
+Depuis le mercredi 20 mai, mappy.com propose un site unique et responsive pour tous les navigateurs (bureau ou mobile).
+En effet, auparavant, les sites fr.mappy.com, fr-be.mappy.com, nl-be.mappy.com et en.mappy.com étaient dédiés au navigateur de bureau et m.mappy.com dédié au navigateurs mobiles.
+Ce billet a pour but de présenter le contexte et notre parcours vers cette décision.
 
 # Historiquement 2 sites
 
-Mappy a mis en ligne une version mobile de ces services via un site mobile il y a plus de 5 ans.
-D’abord via des technologies de type BkRender (pour les téléphones très limités de l’époque), le site a évolué à plusieurs reprises vers une version "HTML5" incorporant une base commune de code avec le site principal (notamment backbone et l’api de cartographie Mappy).
+Mappy a mis en ligne mobile en ligne il y a plus de 5 ans.
+D’abord via des technologies de type BkRender (pour les téléphones très limités de l’époque), le site a évolué à plusieurs reprises vers une version "HTML5" incorporant une base commune de code avec le site principal (notamment backbone et l’API de cartographie Mappy).
 
 ### Réflexion autour du Responsive
 
-C’est après plusieurs mois de maturation et après avoir validé une preuve de concept sur l’adaptation du site principal au "responsive" que la décision de ne servir qu’un unique site a été prise.
+Il y a plusieurs mois, une preuve de concept a été réalisé pour déterminer la faisabilité technique d’un site reponsive.
+
+L’approche responsive peut s’effectuer de 2 façons, en partie complémentaire :
+
+  - l’**approche côté client** : le même code est envoyé par le serveur à toutes les navigateurs, qu’ils soit mobiles ou non, et l’affichage des éléments graphiques est conditionné par des `media queries` CSS et des comportements différents éventuellement conditionné par du code JavaScript ;
+  - l’**approche côté serveur** : un contenu HTML, CSS et JS différent est envoyé à chaque client en fonction du `User-Agent`.
+
+L’approche côté serveur a l’avantage de pouvoir servir un contenu allégé de façon bien plus simple qu’avec l’approche côté cliente (notamment pour les images). Cependant, elle a l’énorme inconvénient de servir un contenu différent en fonction du `User-Agent`, pratique dangereuse en cas de `reverse-proxy` (à moins d’ajouter un entête `Vary: User-Agent` qui rend l’utilisation d’un reverse-proxy caduque). Enfin, il est assez compliqué de déterminer si le navigateur est un téléphone ou une tablette, surtout lorsque certains navigateurs disent qu’ils sont un iPhone, un Android et Windows Phone comme [Windows Phone 8.1](https://msdn.microsoft.com/en-us/library/hh869301%28v=vs.85%29.aspx#code-snippet-11).
+
+L’approche cliente n’a pas ses inconvénients puisque le même contenu est servi à tous mais il est plus difficile de charger un contenu allégé en fonction du navigateur.
+
+### Processus
 
 Le principal avantage est d’éviter le développement des histoires utilisateurs (User Stories) en double, à la fois sur le site principal puis sur le site mobile. En plus du développement, un ensemble de tâches et d’opérations annexes effectuées sur chacun de nos produits sont éliminés en supprimant un produit (tests, correction de jira, déploiements, maintenance des serveurs, etc).
 
