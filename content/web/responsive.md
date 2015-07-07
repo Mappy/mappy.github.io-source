@@ -1,5 +1,5 @@
 Title: Mappy.com dorénavant responsive !
-Date: 2015-07-05
+Date: 2015-07-07
 Slug: mappy-responsive
 Author: Mappy
 Tags: French,JavaScript,responsive
