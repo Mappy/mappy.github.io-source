@@ -18,26 +18,26 @@ D’abord via des technologies de type BkRender (pour les téléphones très lim
 
 Il y a plusieurs mois, une preuve de concept a été réalisé pour déterminer la faisabilité technique d’un site reponsive.
 
-L’approche responsive peut s’effectuer de 2 façons, en partie complémentaire :
+L’approche responsive peut s’effectuer de 2 façons, en partie complémentaires :
 
-  - l’**approche côté client** : le même code est envoyé par le serveur à toutes les navigateurs, qu’ils soit mobiles ou non, et l’affichage des éléments graphiques est conditionné par des `media queries` CSS et des comportements différents éventuellement conditionné par du code JavaScript ;
+  - l’**approche côté client** : le même code est envoyé par le serveur à tous les navigateurs, qu’ils soient mobiles ou non, et l’affichage des éléments graphiques est conditionné par des `media queries` CSS et des comportements différents éventuellement conditionné par du code JavaScript ;
   - l’**approche côté serveur** : un contenu HTML, CSS et JS différent est envoyé à chaque client en fonction du `User-Agent`.
 
 L’approche côté serveur a l’avantage de pouvoir servir un contenu allégé de façon bien plus simple qu’avec l’approche côté cliente (notamment pour les images). Cependant, elle a l’énorme inconvénient de servir un contenu différent en fonction du `User-Agent`, pratique dangereuse en cas de `reverse-proxy` (à moins d’ajouter un entête `Vary: User-Agent` qui rend l’utilisation d’un reverse-proxy caduque). Enfin, il est assez compliqué de déterminer si le navigateur est un téléphone ou une tablette, surtout lorsque certains navigateurs disent qu’ils sont un iPhone, un Android et Windows Phone comme [Windows Phone 8.1](https://msdn.microsoft.com/en-us/library/hh869301%28v=vs.85%29.aspx#code-snippet-11).
 
-L’approche cliente n’a pas ses inconvénients puisque le même contenu est servi à tous mais il est plus difficile de charger un contenu allégé en fonction du navigateur.
+L’approche cliente n’a pas ces inconvénients puisque le même contenu est servi à tous mais il est plus difficile de charger un contenu allégé en fonction du navigateur.
 
 ### Processus
 
-Le principal avantage est d’éviter le développement des histoires utilisateurs (User Stories) en double, à la fois sur le site principal puis sur le site mobile. En plus du développement, un ensemble de tâches et d’opérations annexes effectuées sur chacun de nos produits sont éliminés en supprimant un produit (tests, correction de jira, déploiements, maintenance des serveurs, etc).
+Le principal avantage est d’éviter le développement des histoires utilisateurs (User Stories) en double, à la fois sur le site principal puis sur le site mobile. En plus du développement, un ensemble de tâches et d’opérations annexes effectuées sur chacun de nos produits est éliminé en supprimant un produit (tests, correction de jira, déploiements, maintenance des serveurs, etc).
 
 Un autre avantage est le fait qu’une nouvelle histoire utilisateur impactera en même temps l’audience fixe et mobile.
-Auparavant, il arrivait que certaines fonctionnalités soit d’abord réalisé sur le site fixe, puis quelques itérations suviantes sur le site mobile.
+Auparavant, il arrivait que certaines fonctionnalités soit d’abord réalisées sur le site fixe, puis quelques itérations suivantes sur le site mobile.
 
 Enfin, étant donné que le site fr.mappy.com est le même site que les versions étrangères, le passage au "responsive" permet aux versions étrangères de bénéficier directement d’une version mobile.
 
 Il n’y a pas de réel inconvénient par rapport à ce changement mais quelques points de vigilance.
-En effet, chaque fonctionnalité est maintenant testé sur plus de support qu’auparavant.
+En effet, chaque fonctionnalité est maintenant testée sur plus de support qu’auparavant.
 Par ailleurs, lors de la conception, certains points doivent être pris en compte (conception sur petit et grand écran, gestion du touch, image en haute définition, etc).
 Enfin, certaines fonctionnalités sont différentes entre le fixe et le mobile. L’itinéraire sur mobile par exemple, présente un écran affichant le sommaire de la feuille de route, écran inexistant sur la version fixe.
 
@@ -48,7 +48,7 @@ L’implémentation du site "responsive" s’effectue principalement via des "[C
 Une grande partie de nos icônes utilise une police de caractère spéciale (à la manière de [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/)), permettant de s’abstraire d’une version normale et haute densité de pixel ("retina"). Attention, cette technique n’est utilisable que pour les icônes d’une seule couleur (comme pour nos icônes de catégories).
 
 Certains cas nécessitent l’utilisation de JavaScript pour adapter le comportement à la cible (notamment le choix des emplacements publicitaires à afficher ou les différences de comportement entre les périphèriques).
-Néanmoins, la majorité des cas ne concerne que des adatations au niveau des CSS.
+Néanmoins, la majorité des cas ne concerne que des adaptations au niveau des CSS.
 
 ### Tests
 
