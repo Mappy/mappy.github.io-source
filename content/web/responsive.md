@@ -15,7 +15,7 @@ Ce billet a pour but de présenter le contexte et notre parcours vers cette déc
 
 # Historiquement 2 sites
 
-Mappy a mis en ligne mobile en ligne il y a plus de 5 ans.
+Mappy a mis en ligne mobile il y a plus de 5 ans.
 D’abord via des technologies de type BkRender (pour les téléphones très limités de l’époque), le site a évolué à plusieurs reprises vers une version "HTML5" incorporant une base commune de code avec le site principal (notamment backbone et l’API de cartographie Mappy).
 
 ### Réflexion autour du Responsive
@@ -23,19 +23,19 @@ D’abord via des technologies de type BkRender (pour les téléphones très lim
 Nos principales motivations au passage à un site responsive étaient :
 
   - d’arrêter le double développement d’User-Stories à la fois sur le site fixe et mobile (et, ainsi, de livrer les futures User-Stories sur tous les supports),
-  - l’[annonce de Google](http://googlewebmastercentral.blogspot.fr/2015/04/faqs-april-21st-mobile-friendly.html) favorisant les sites "mobile-friendly" alors que le site mobile était alors fermé aux robots,
+  - l’[annonce de Google](http://googlewebmastercentral.blogspot.fr/2015/04/faqs-april-21st-mobile-friendly.html) favorisant les sites "mobile-friendly" alors que le site mobile était fermé aux robots,
   - le fait de n’avoir qu’une unique base de code, afin de simplifier le développement de nouvelles fonctionnalités et la maintenance,
   - d’offrir une version mobile pour les versions étrangères.
 
 Le passage à un site responsive soulève néanmoins quelques points de vigilance quant au processus actuel :
 
-   - chaque fonctionnalité doit être testé sur plus de support qu’auparavant,
+   - chaque fonctionnalité doit être testée sur plus de support qu’auparavant,
    - lors de la conception, certains points doivent être pris en compte (conception sur petit et grand écran, gestion du touch, image en haute définition, etc).
 
 Enfin, certaines fonctionnalités sont différentes entre le site fixe et le site mobile.
 L’itinéraire sur mobile par exemple, présente un écran affichant le sommaire de la feuille de route, écran inexistant sur la version fixe.
 
-Une preuve de concept a alors été réalisé pour déterminer la faisabilité technique d’un site reponsive.
+Une preuve de concept a alors été réalisée pour déterminer la faisabilité technique d’un site reponsive.
 Cette preuve de concept a démontré qu’un résultat satisfaisant pouvait être atteint à un coût acceptable (environ 2 itérations de développement).
 
 
@@ -78,8 +78,8 @@ Un point de détail, depuis le passage au responsive, notre vocabulaire a chang�
 
 #### Optimisations graphiques
 
-Á la manière de [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/), une grande partie de nos icônes (hôtel, restaurant, commerce, etc) utilise une police de caractère spéciale les aggrégant. Cela permet de s’abstraire d’une version normale et haute densité de pixel ("retina").
-Cette technique se limite toutefois à des icônes d’une seule couleur donc nous conservont encore quelques sprites.
+Á la manière de [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/), une grande partie de nos icônes (hôtel, restaurant, commerce, etc) utilise une police de caractère spéciale les aggrégeant. Cela permet de s’abstraire d’une version normale et haute densité de pixel ("retina").
+Cette technique se limite toutefois à des icônes d’une seule couleur donc nous conservons encore quelques sprites.
 
 #### JavaScript
 
