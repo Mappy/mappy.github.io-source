@@ -99,7 +99,7 @@ Enfin, nos tests Selenium sont en cours d’évolution puisque nous comptons mai
 
 Le passage au site "responsive" s’est passé sans accroc.
 
-Les bénéfices portent leurs fruits, notamment sur 2 points :
+Le travail a porté ses fruits, notamment sur 2 points :
 
    - l’impact SEO suite à la mise en ligne du site reponsive a été largement positif avec une progression entre 10 et 15 % (lié également au fait que le site mobile était fermé aux robots auparavant),
    - l’unification du code simplifie le développement et allège les processus au quotidien (moins de livrables, moins d’environnements, moins de projets dont des briques communes, etc).
