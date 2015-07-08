@@ -3,7 +3,7 @@ Date: 2015-07-07
 Slug: mappy-responsive
 Author: Mappy
 Tags: French,JavaScript,responsive
-Summary: Explications du remplacement de 2 sites par un site responsive.
+Summary: Explications du remplacement du site Mappy et du site mobile par un unique site responsive.
 
 Depuis le mercredi 20 mai, mappy.com propose un site unique et responsive pour tous les navigateurs (bureau ou mobile).
 
