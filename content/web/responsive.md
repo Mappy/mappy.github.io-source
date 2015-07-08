@@ -41,16 +41,18 @@ Cette preuve de concept a démontré qu’un résultat satisfaisant pouvait êtr
 
 ### Implémentation
 
-#### Responsive client ou serveur ?
+#### "Responsive client" ou "dynamic server" ?
 
-L’approche responsive peut s’effectuer de 2 façons, éventuellement complémentaires :
+L’implémentation peut s’effectuer de 2 façons, éventuellement complémentaires :
 
-  - l’**approche côté client** : le même code est envoyé par le serveur à tous les navigateurs, qu’ils soient mobiles ou non, et l’affichage des éléments graphiques est conditionné par des `media queries` CSS et des comportements différents éventuellement conditionnés par du code JavaScript ;
-  - l’**approche côté serveur** : un contenu HTML, CSS et JS différent est envoyé à chaque client en fonction du `User-Agent`.
+  - l’**approche "responsive client"** : le même code est envoyé par le serveur à tous les navigateurs, qu’ils soient mobiles ou non, et l’affichage des éléments graphiques est conditionné par des `media queries` CSS et des comportements différents éventuellement conditionnés par du code JavaScript ;
+  - l’**approche "dynamic server"** : un contenu HTML, CSS et JS différent est envoyé à chaque client en fonction du `User-Agent`.
 
-L’approche côté serveur a l’avantage de pouvoir servir un contenu allégé de façon bien plus simple qu’avec l’approche côté cliente (notamment pour les images). Cependant, elle a l’énorme inconvénient de servir un contenu différent en fonction du `User-Agent`, une pratique dangereuse en cas de `reverse-proxy` (à moins d’ajouter un entête `Vary: User-Agent` qui rend l’utilisation d’un reverse-proxy caduque). Enfin, certains navigateurs se disent iPhone, Android et Windows Phone comme c’est le cas pour [Windows Phone 8.1](https://msdn.microsoft.com/en-us/library/hh869301%28v=vs.85%29.aspx#code-snippet-11) ce qui rend la tâche complexe.
+L’approche "dynamic server" a l’avantage de pouvoir servir un contenu allégé de façon bien plus simple qu’avec l’approche côté cliente (notamment pour les images). Cependant, elle a l’énorme inconvénient de servir un contenu différent en fonction du `User-Agent`, une pratique dangereuse en cas de `reverse-proxy` (à moins d’ajouter un entête `Vary: User-Agent` qui rend l’utilisation d’un reverse-proxy caduque). Enfin, certains navigateurs se disent iPhone, Android et Windows Phone comme c’est le cas pour [Windows Phone 8.1](https://msdn.microsoft.com/en-us/library/hh869301%28v=vs.85%29.aspx#code-snippet-11) ce qui rend la tâche complexe.
 
-L’approche cliente n’a pas ces inconvénients puisque le même contenu est servi à tous mais il est plus difficile de charger un contenu allégé en fonction du navigateur.
+L’approche "responsive client", préconisée par les [recommandations SEO](https://developers.google.com/webmasters/mobile-sites/mobile-seo/configurations/responsive-design#why-responsive-design) de Google, n’a pas ces inconvénients puisque le même contenu est servi à tous.
+Par contre, il est plus difficile de charger un contenu allégé en fonction du navigateur.
+
 
 #### CSS
 
@@ -101,5 +103,5 @@ Le passage au site "responsive" s’est passé sans accroc.
 
 Le travail a porté ses fruits, notamment sur 2 points :
 
-   - l’impact SEO suite à la mise en ligne du site reponsive a été largement positif avec une progression entre 10 et 15 % (lié également au fait que le site mobile était fermé aux robots auparavant),
+   - l’impact SEO suite à la mise en ligne du site reponsive a été largement positif avec une progression entre 20 et 30 % (également lié à la suppression du message d’avertissement dans les pages de résultats Google indiquant que le site n’était pas adapté au mobile suite au blocage des robots sur ce même domaine),
    - l’unification du code simplifie le développement et allège les processus au quotidien (moins de livrables, moins d’environnements, moins de projets dont des briques communes, etc).
