@@ -5,13 +5,13 @@ Author: Mappy
 Tags: French,JavaScript,responsive
 Summary: Explications du remplacement du site Mappy et du site mobile par un unique site responsive.
 
-Depuis le mercredi 20 mai, mappy.com propose un site unique et responsive pour tous les navigateurs (bureau ou mobile).
+Depuis le mercredi 20 mai, mappy.com propose un site unique et responsive pour tous les navigateurs (bureau, tablette ou mobile).
 
 ![Site petit écran](images/responsive/mobile.png)
 ![Site grand écran](images/responsive/fixe.png)
 
-En effet, auparavant, les sites [fr.mappy.com](//fr.mappy.com), [fr-be.mappy.com](//fr-be.mappy.com), [nl-be.mappy.com](//nl-be.mappy.com) et [en.mappy.com](//en.mappy.com) étaient dédiés aux navigateurs de bureau et m.mappy.com aux navigateurs mobiles.
-Ce billet a pour but de présenter le contexte et notre parcours vers cette décision.
+En effet, auparavant, les sites [fr.mappy.com](//fr.mappy.com), [fr-be.mappy.com](//fr-be.mappy.com), [nl-be.mappy.com](//nl-be.mappy.com) et [en.mappy.com](//en.mappy.com) étaient dédiés aux navigateurs de bureau et m.mappy.com aux navigateurs mobiles et tablettes.
+Ce billet a pour but de présenter le contexte et notre parcours vers cette orientation.
 
 # Historiquement 2 sites
 
@@ -74,20 +74,20 @@ Page d’accueil / écran de résultats / affichage d’un POI ou un itinéraire
 
   - les petits écrans (par exemple les téléphones en portrait/paysage et tablette en portrait),
   - les écrans moyens (par exemple les tablettes en mode paysage),
-  - et enfin les grands écrans (toutes les plus grandes définitions) où certrains contenus sont plus aérés (taille des éléments, marge entre la barre gauche et la carte et le bord de l’écran, etc).
+  - et enfin les grands écrans (toutes les plus grandes définitions) où certains contenus sont plus aérés (taille des éléments, marge entre la barre gauche et la carte et le bord de l’écran, etc).
 
 Un point de détail, depuis le passage au responsive, notre vocabulaire a changé puisque nous parlons de petit ou grand écran plutôt que de fixe et mobile.
 
 #### Optimisations graphiques
 
-Á la manière de [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/), une grande partie de nos icônes (hôtel, restaurant, commerce, etc) utilise une police de caractère spéciale les aggrégeant. Cela permet de s’abstraire d’une version normale et haute densité de pixel ("retina").
+À la manière de [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/), une grande partie de nos icônes (catégories de commerce, outils de la carte, etc) utilise une police de caractère spéciale les aggrégeant. Cela permet de s’abstraire d’une version normale et haute densité de pixel ("retina").
 Cette technique se limite toutefois à des icônes d’une seule couleur donc nous conservons encore quelques sprites.
 
 #### JavaScript
 
 Certains cas minoritaires nécessitent l’utilisation de JavaScript pour adapter le comportement à la cible (notamment le choix des emplacements publicitaires à afficher ou les différences de comportement comme le cas du sommaire de la feuille de route évoqué plus haut).
 
-Néanmoins, la majorité des cas ne concerne que des adatations au niveau des CSS.
+Néanmoins, la majorité des cas ne concerne que des adaptations au niveau des CSS.
 
 ### Tests
 
