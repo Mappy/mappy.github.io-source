@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mappy Device Orientation Tour</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <style>
+            body { margin: 0px; overflow: hidden; }
+            body #container { position: absolute; overflow: hidden; top: 0; bottom: 0; left: 0; right: 0; }
+            .zoom-bar { display: none; }
+        </style>
+        <link type="text/css" rel="stylesheet" href="MappyOutdoorView.css" />
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/javascript" src="MappyOutdoorView.js"></script>
+        <script>
+            var domain = 'mappy.net';
+
+            var opts = {
+                domain: domain,
+                imgPath: 'images',
+                clientId: 'techblog'
+            };
+
+            var panoIds = [
+                1000003317488, // Paris Tour eiffel
+                1000030582836, // Paris Trocadero
+                1000013544571, // Paris Sacre coeur
+                1000030577185, // Paris Montparnasse
+                1000030311270, // Paris Assemble nationale
+                1000028085205, // Paris Louvres
+                1000006155493  // Lyon Fourvières
+            ];
+
+            var panoIdx = 0;
+
+            var outdoorView = new MappyOutdoor.View(document.querySelector('#container'), panoIds[panoIdx], opts);
+
+            setInterval(function switchPano() {
+                panoIdx = (panoIdx < panoIds.length - 1) ? panoIdx + 1 : 0;
+                outdoorView.setPanoramic(panoIds[panoIdx]);
+            }, 60 * 1000);
+
+            function handleOrientation(event) {
+                outdoorView.setOrientation(event.alpha, event.beta, event.gamma);
+                outdoorView.view3d.fullscreen = false; // remove controls
+            }
+
+            window.addEventListener("deviceorientation", handleOrientation.bind(this), false);
+        </script>
+    </body>
+</html>
