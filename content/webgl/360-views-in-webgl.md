@@ -67,8 +67,7 @@ Three.js permet, en quelques lignes de code, d’afficher une vue 3d sans avoir 
 
 Voici un exemple de "skybox" basique où la caméra tourne sur elle-même :
 
-<iframe width="100%" height="300" src="//jsfiddle.net/053ng6gm/2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
+<iframe width="100%" height="700" src="//jsfiddle.net/053ng6gm/2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 ## Interaction avec les objets
