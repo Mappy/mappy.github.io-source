@@ -5,20 +5,19 @@ Authors: Mappy
 Tags: French,JavaScript,WebGL,three.js
 Summary: Cet article présente la migration des vues 360 depuis Flash vers WebGL
 
-Le site Mappy offre depuis 2011 des [vues 360°][1] des [320 villes][16] plus grandes villes de France :
+Le site [Mappy][24] offre depuis 2011 des [vues 360°][1] des [320 villes][16] plus grandes villes de France :
 
 <iframe src="http://widgets.mappy.com/360view?key=techblog&lat=48.85369&lng=2.34821" width="100%" height="400" scrolling="no"></iframe>
 
-## Mappy Cars & Mappy Bike
+## MappyCar
 
-En effet, 2 voitures surnommées "Mappy Car" ([@earthmine02][2], [@earthmine07][3]) et même un vélo parcourent les rues des villes de France pour prendre des photos sous plusieurs angles.
+En effet, 2 voitures surnommées "MappyCar" ([@earthmine02][2], [@earthmine07][3]) parcourent les rues des villes de France pour prendre des photos sous plusieurs angles.
 
 ![Mappy Car](images/webgl/mappy-car.jpg)
-![Mappy Bike](images/webgl/mappy-bike.jpg)
 
 ## Historiquement...
 
-Historiquement, le composant chargé d’afficher les vues sur le site mappy.com fût développé en Flash.
+Historiquement, le composant chargé d’afficher les vues sur le site [fr.mappy.com][24] fût développé en Flash.
 
 Il était grand temps de mettre ce composant à jour en adoptant des technologies modernes pour afficher de la 3d au sein du navigateur, j’ai nommé [WebGL][4].
 
@@ -26,8 +25,8 @@ Mais avant de nous plonger dans WebGL, une présentation des vues 360 s’impose
 
 ## Explications des prises de vue 360
 
-Les véhicules Mappy sont équipées de plusieurs appareils photos orientés de chaque côté de la voiture et prennent des photos régulièrement de façon synchronisée pendant le déplacement.
-Elles enregistrent également différents paramètres tels que les coordonnées GPS, l’altitude, le tangage (pitch), l’orientation (yaw) et le roulis (roll).
+Les véhicules Mappy sont équipés de 8 appareils photos orientés de chaque côté de la voiture et prennent des photos régulièrement de façon synchronisée pendant le déplacement.
+Ils enregistrent également différents paramètres tels que les coordonnées GPS, l’altitude, le tangage (pitch), l’orientation (yaw) et le roulis (roll).
 
 Les photos sont ensuites assemblées afin d'obtenir 6 images.
 Ces 6 images seront projetées à l’intérieur d’un cube. Ce cube est alors appelé "skybox".
@@ -106,7 +105,7 @@ Three.js implémente cette fonctionnalité via [StereoEffect][19] et [DeviceOrie
 
 ## Un dernier mot sur l’intégration des vues sur votre site
 
-Mappy propose plusieurs [modes d’intégration][23] pour ses cartes ou sa vue 360.
+[Mappy][24] propose plusieurs [modes d’intégration][23] pour ses cartes ou sa vue 360.
 L’un des modes se présente sous la forme d’un widget (tel que l’exemple en haut de cette page).
 N’hésitez pas à nous contacter (deportalisation[AT]mappy.com) si une intégration sur votre site ou vos applications mobiles vous intéresse.
 
@@ -133,4 +132,5 @@ N’hésitez pas à nous contacter (deportalisation[AT]mappy.com) si une intégr
   [21]: https://fr.wikipedia.org/wiki/Raycasting
   [22]: https://github.com/mrdoob/three.js/blob/master/src/core/Raycaster.js
   [23]: http://corporate.mappy.com/faq/integrez-mappy/
+  [24]: http://fr.mappy.com
 
