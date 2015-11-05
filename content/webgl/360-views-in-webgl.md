@@ -30,13 +30,13 @@ Les véhicules Mappy sont équipées de plusieurs appareils photos orientés de 
 Elles enregistrent également différents paramètres tels que les coordonnées GPS, l’altitude, le tangage (pitch), l’orientation (yaw) et le roulis (roll).
 
 Les photos sont ensuites assemblées afin d'obtenir 6 images.
-Ces 6 images seront projetés à l’intérieur d’un cube. Ce cube est alors appelé "skybox".
+Ces 6 images seront projetées à l’intérieur d’un cube. Ce cube est alors appelé "skybox".
 
 ![Bitmap tile faces layout on a cube](images/panoramic_cube_01.png)
 
 ## Scène 3d
 
-L’astuce est alors de créé une scène 3d composé de ce cube et d’une caméra au centre.
+L’astuce est alors de créer une scène 3d composée de ce cube et d’une caméra au centre.
 
 ![Cube faces layout](images/panoramic_cube_02.png)
 
@@ -44,7 +44,7 @@ La caméra peut bouger à l’intérieur du cube sur 2 axes afin de pivoter hori
 
 ## Déplacement
 
-Il y a plusieurs façon de se déplacer d'une vue à l'autre :
+Il y a plusieurs façons de se déplacer d'une vue à l'autre :
 
  - En utilisant les flèches, on peut se déplacer vers la vue la plus proche dans la direction souhaitée.
  - En cliquant sur le sol, on va chercher s'il existe une vue proche à ce point et l'afficher.
@@ -56,7 +56,7 @@ Il est également possible de zoomer dans la vue. Pour cela, nous avons joué su
 ## Chargement progressif
 
 Afin d'avoir un rendu le plus rapide possible et pour éviter à l'utilisateur de bloquer sur un fond noir lorsque sa connexion est lente, la vue charge d'abord un cube avec des images de basse qualité, donc très légères.
-Lorsque cette première "skybox" est affichée, la vue va charger des images de meilleure qualité. En fonction de la taille d’écran ou de la résolution, chaque face du cube sera composé d'une ou de plusieurs images (1, 4 ou 16 images par face) afin d’avoir un rendu net sur tous les supports.
+Lorsque cette première "skybox" est affichée, la vue va charger des images de meilleure qualité. En fonction de la taille d’écran ou de la résolution, chaque face du cube sera composée d'une ou de plusieurs images (1, 4 ou 16 images par face) afin d’avoir un rendu net sur tous les supports.
 
 ![différentes résolutions](images/panoramic_cube_03.png)
 
@@ -101,7 +101,7 @@ Les téléphones et tablettes modernes possèdent des capteurs d’orientations.
 Ils sont accessibles en JavaScript via [API DeviceOrientations][11].
 Nous n’avons pas pu résister à l'envie de [connecter cette API à la vue pour la piloter avec son téléphone][12].
 
-Enfin, si vous disposez d’un [cardboard][13] (boite en carton où l’on peut insérer son téléphone), vous pouvez chausser vos lunettes et [visualiser les vues 360 en réalité augmentée][14].
+Enfin, si vous disposez d’un [cardboard][13] (boîte en carton où l’on peut insérer son téléphone), vous pouvez chausser vos lunettes et [visualiser les vues 360 en réalité augmentée][14].
 
 Three.js implémente cette fonctionnalité via [StereoEffect][19] et [DeviceOrientationControls][20]. Je vous invite à lire ce [très bon article][15] si le sujet vous intéresse.
 
@@ -109,7 +109,7 @@ Three.js implémente cette fonctionnalité via [StereoEffect][19] et [DeviceOrie
 
 Mappy propose plusieurs [modes d’intégration][23] pour ses cartes ou sa vue 360.
 L’un des modes se présente sous la forme d’un widget (tel que l’exemple en haut de cette page).
-N’hésitez pas à nous contactez (deportalisation[AT]mappy.com) si une intégration sur votre site ou applications mobiles vous intéresse.
+N’hésitez pas à nous contacter (deportalisation[AT]mappy.com) si une intégration sur votre site ou vos applications mobiles vous intéresse.
 
 
   [1]: http://fr.mappy.com/#/436/M1/TSearch/Sparis/N1090.14493,12.34393,2.34821,48.85369/Z7/
