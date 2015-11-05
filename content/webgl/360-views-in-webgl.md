@@ -101,6 +101,8 @@ Nous n’avons pas pu résister à l'envie de [connecter cette API à la vue pou
 
 Enfin, si vous disposez d’un [cardboard][13] (boîte en carton où l’on peut insérer son téléphone), vous pouvez chausser vos lunettes et [visualiser les vues 360 en réalité augmentée][14].
 
+![virtual reality](images/webgl/virtual-reality.png)
+
 Three.js implémente cette fonctionnalité via [StereoEffect][19] et [DeviceOrientationControls][20]. Je vous invite à lire ce [très bon article][15] si le sujet vous intéresse.
 
 ## Un dernier mot sur l’intégration des vues sur votre site
