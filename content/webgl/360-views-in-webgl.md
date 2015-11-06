@@ -122,9 +122,9 @@ N’hésitez pas à nous contacter (deportalisation[AT]mappy.com) si une intégr
   [8]: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
   [9]: http://caniuse.com/#feat=transforms3d
   [11]: https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation
-  [12]: /resources/webgl/deviceorientation.html
+  [12]: http://cdn.rawgit.com/Mappy/mappy.github.io-source/7545ef6cc29d998935e3cc8b5697bf533b4d7349/content/resources/webgl/deviceorientation.html
   [13]: https://www.google.com/get/cardboard/
-  [14]: /resources/webgl/cardboard.html
+  [14]: http://cdn.rawgit.com/Mappy/mappy.github.io-source/7545ef6cc29d998935e3cc8b5697bf533b4d7349/content/resources/webgl/cardboard.html
   [15]: http://www.sitepoint.com/bringing-vr-to-web-google-cardboard-three-js/
   [16]: http://widgets.mappy.com/360view/documentation/#coverage
   [17]: https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists
