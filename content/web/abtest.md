@@ -97,7 +97,7 @@ Cette dernière change un état interne et se doit de lancer un appel de tag.
 var _         = require('underscore');
 var Backbone  = require('backbone');
 
-var AbTestModel = module.exports = Backbone.Model({
+var AbTestModel = module.exports = Backbone.Model.extend({
 
     parse: function (resp) {
         resp.from = new Date(resp.from); // Conversion des dates
@@ -199,7 +199,7 @@ var AbTestModel = module.exports = Backbone.Model({
             this.started = true;
         }
     }
-}, {});
+});
 ```
 
 Le fichier de configuration est un tableau d’objet JSON.
@@ -244,7 +244,7 @@ var AbTestCollection = module.exports = Backbone.Collection.extend({
         }
     }
 
-}, {});
+});
 ```
 
 ### 3. Utilisation dans le code
