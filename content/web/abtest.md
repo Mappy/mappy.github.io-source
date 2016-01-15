@@ -17,7 +17,7 @@ Source de l’image : [Wikipedia](https://fr.wikipedia.org/wiki/Test_A/B)
 A l’issue de la période, si les métriques pour la variante sont meilleures que la version normale, on transforme la variante en version par défaut.
 
 
-Il est tout à fait possible d’avoir plus qu’une variante que l’on partagera entre l’audience totale (33 % pour 2 variantes, 25 % pour 3, etc).
+Il est tout à fait possible d’avoir plus qu’une variante que l’on partagera entre l’audience totale (33 % pour 2 variantes et la référence, 25 % pour 3, etc).
 
 
 Le but des A/B tests est de pouvoir tester ce qui fonctionne le mieux en condition réélle pour améliorer continuellement son produit.
@@ -57,7 +57,7 @@ Comme exemple, j’utiliserais notre 1er test AB ayant consisté à proposer 4 d
 
 Mappy héberge le fichier de configuration des tests AB sur [http://ab.mappy.net/config.json](http://ab.mappy.net/config.json).
 
-Voici le fichier de configuration pour le test AB sur les couleurs de boutons :
+Voici le fichier de configuration pour le test sur les couleurs de boutons :
 ```javascript
 [{
     "id":     "AB01-couleur-resa",   // Identifiant unique du test
@@ -77,51 +77,22 @@ Voici le fichier de configuration pour le test AB sur les couleurs de boutons :
 }]
 ```
 
-### 2. Analyse du fichier de configuration
+### 2. AbTestModel et AbTestCollection
 
-Le fichier de configuration est un tableau d’objet JSON.
+Nous utilisons un modèle Backbone comme objet pour gérer chaque test AB.
+Il s’agit de l’`AbTestModel`.
 
-C’est donc une collection Backbone (AbTestCollection) qui se charge de récupèrer ce fichier et d’instancier les modèles (AbTestModel).
+Ce dernier se charge de parser la configuration et de la valider (vérification de la précence des champs, que les totaux des variantes fassent 100 %, etc).
 
-```javascript
-var _           = require('underscore');
-var Backbone    = require('backbone');
-var AbTestModel = require('../model/AbTestModel');
+Il offre également une méthode `isTargetted` qui retourne `true` si le test est élligible pour la navigateur courant (s’il répond aux critères).
+Cette méthode se décompose en 3 méthodes : `isTargettedByPlatform`, `isTargettedByLocale` et `isTargettedByDate`.
 
-var AbTestCollection = module.exports = Backbone.Collection.extend({
+La méthode `getVariant` retourne l’une des variantes en ayant préalablement tiré un chiffre au hasard via `getRandomId`.
 
-    model: AbTestModel,
+Enfin, la méthode `start` est appelé lorsque l’on souhaite démarrer le test.
+Cette dernière change un état interne et se doit de lancer un appel de tag.
 
-    url: '//abtest.mappy.net/config.json',
 
-    init: function () {
-        var currentTest = _.find(this.models, _.bind(function (model) {
-            return model.isTargetted();
-        }, this));
-
-        if (currentTest) {
-            this.current = currentTest; // Test en cours (il n’y en a toujours qu’un seul actif en même temps)
-        }
-    },
-
-    getVariant: function (testId) {
-        if (this.current && (!testId || this.current.get('id') === testId)) {
-            return this.current.getVariant();
-        }
-        return null;
-    },
-
-    start: function (testId) {
-        // testId required
-        // prevent sending a tag for other tests (if multiple programmations in configuration and code)
-        if (this.current && this.current.get('id') === testId) {
-            this.current.start();
-        }
-    }
-
-}, {});
-```
-Et voici l’objet AbTestModel :
 ```javascript
 var _         = require('underscore');
 var Backbone  = require('backbone');
@@ -207,7 +178,7 @@ var AbTestModel = module.exports = Backbone.Model({
                 id: this.id,
                 randomId: Math.floor(Math.random() * 100)
             };
-            localStorage.set('ab', JSON.stringify(ab)); // Variante persisté dans le localStorage, afin de servir la même variante de visite en visite
+            localStorage.set('ab', JSON.stringify(ab)); // Variante persistée dans le localStorage, afin de servir la même variante de visite en visite
         }
         return ab.randomId;
     },
@@ -230,11 +201,60 @@ var AbTestModel = module.exports = Backbone.Model({
     }
 }, {});
 ```
+
+Le fichier de configuration est un tableau d’objet JSON.
+
+Nous utilisons donc une collection Backbone, `AbTestCollection`, qui se charge de récupèrer ce fichier via Ajax lors d’un appel sur la méthode `fetch` et d’instancier les modèles `AbTestModel`.
+
+```javascript
+var _           = require('underscore');
+var Backbone    = require('backbone');
+var AbTestModel = require('../model/AbTestModel');
+
+var AbTestCollection = module.exports = Backbone.Collection.extend({
+
+    model: AbTestModel, // Model composant la collection
+
+    url: '//abtest.mappy.net/config.json',
+
+    // Les collections Backbone héritent d’une méthode fetch, effectuant un appel Ajax sur la propriété url
+
+    init: function () {
+         // Test en cours (il n’y en a toujours qu’un seul actif en même temps)
+        var currentTest = _.find(this.models, _.bind(function (model) {
+            return model.isTargetted();
+        }, this));
+
+        if (currentTest) {
+            this.current = currentTest;
+        }
+    },
+
+    getVariant: function (testId) {
+        if (this.current && (!testId || this.current.get('id') === testId)) {
+            return this.current.getVariant();
+        }
+        return null;
+    },
+
+    start: function (testId) {
+        // Appel de start sur le test pour le test en cours
+        if (this.current && this.current.get('id') === testId) {
+            this.current.start();
+        }
+    }
+
+}, {});
+```
+
+### 3. Utilisation dans le code
+
 Pour ce test qui consiste à proposer des couleurs de bouton différente, il suffit alors :
 
   1. instancier la collection pour récupèrer le test actif,
   2. Récupèrer la variante de test,
   3. Ajouter une classe CSS sur le body qui surchargera les couleurs des boutons, ici dans un fichier less.
+  4. Démarrer le test (consistant à envoyer un tag) dès qu’une variante (ou la référence) est affiché à l’utilisateur
 
 ```javascript
 var variantBookingColor = Mappy.abTestCollection.getVariant("AB01-couleur-resa");
@@ -253,6 +273,12 @@ body.ab-lavande .button {
     background-color: #8968d4;
 }
 ```
+Et voici le démarrage du test dès l’affichage d’une liste possédant les boutons.
+```javascript
+    Mappy.abTestCollection.start("AB01-couleur-resa");
+```
+En effet, concernant les statistiques, nous ne nous intéressons qu’aux personnes ayant vu la référence ou une variante et non tous les autres visiteurs.
+
 
 L’exemple ici est simpliste mais, en laissant la liberté côté JavaScript, il est possibe de réaliser n’importe quel test.
 
