@@ -47,7 +47,7 @@ Il s’agit simplement :
  2. d’analyser ce fichier au chargement du site, de tirer un chiffre au hasard pour déterminer le test à appliquer,
  3. ensuite, pour chaque test, de faire les modifications dans le code pour afficher la variante (ou ne rien faire et afficher la référence).
 
-La partie métrique est également très importante mais nous utilisons simplement notre solution existante (xiti ou, pour notre service BI, ajoutons simplement les identifiants de test et de variante aux requêtes d’API).
+La partie métrique est également très importante mais nous utilisons simplement notre solution existante (AT Internet ou, pour notre service BI, ajoutons simplement les identifiants de test et de variante aux requêtes d’API).
 
 Comme exemple, j’utiliserais notre 1er test AB ayant consisté à proposer 4 différentes couleurs de bouton sur les différentes pages du site :
 
@@ -194,7 +194,7 @@ var AbTestModel = module.exports = Backbone.Model.extend({
     // Démarrage du test
     start: function () {
         if (!this.started) {
-            // Envoi d’un tag à AtInternet pour signaler le début du test
+            // Envoi d’un tag à AT Internet pour signaler le début du test
             // http://help.atinternet-solutions.com/FR/implementation/specific_tags/tg_abtesting_fr.htm
             this.started = true;
         }
