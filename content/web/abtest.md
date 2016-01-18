@@ -20,7 +20,7 @@ A l’issue de la période, si les métriques pour la variante sont meilleures q
 Il est tout à fait possible d’avoir plus qu’une variante que l’on partagera entre l’audience totale (33 % pour 2 variantes et la référence, 25 % pour 3, etc).
 
 
-Le but des A/B tests est de pouvoir tester ce qui fonctionne le mieux en condition réélle pour améliorer continuellement son produit.
+Le but des A/B tests est de pouvoir tester ce qui fonctionne le mieux en condition réelle pour améliorer continuellement son produit.
 
 ## Premier essai sur mappy.com
 
@@ -28,18 +28,18 @@ L’objectif de Mappy est de tester différentes variantes du site web, que cela
 
 Nous avons initialement utilisé un outil externe fonctionnant via l’inclusion d’un JavaScript externe depuis le site mappy.
 
-L’avantage d’une telle solution est le fait qu’elle est facilement mise en place sur le site (une simple balise `script`) et que la création des tests peut se faire via l’outil externe en ligne (via du "drag and drop" ou via l’écriture de JavaScript directement dans l’outil).
+L’avantage d’une telle solution est qu’elle est facilement mise en place sur le site (une simple balise `script`) et que la création des tests peut se faire via l’outil externe en ligne (via du "drag and drop" ou via l’écriture de JavaScript directement dans l’outil).
 
-Le principal inconvénient d’une telle solution est le fait qu’il est difficile de réaliser tous les A/B tests souhaités.
+Le principal inconvénient d’une telle solution est qu’il est difficile de réaliser tous les A/B tests souhaités.
 
-En effet, il est difficile de se brancher sur des appels Ajax ou d’autre comportement et on en revient à "surveiller" des changements sur des éléments DOM.
+En effet, il est difficile de se brancher sur des appels Ajax ou d’autres comportements et on en revient à "surveiller" des changements sur des éléments DOM.
 Cela n’est pas performant et on constate rapidement du "[flickering](https://en.wikipedia.org/wiki/Flicker_%28screen%29#Software_artifacts)" (version initiale suivi de la variante après quelques millisecondes).
 
 Par ailleurs, l’inclusion d’un script externe est toujours délicate, notamment en terme de performances (requêtes, poids, etc) et de sécurité (non maitrise du script inclus).
 
 ## Une meilleure solution
 
-Après avoir validé une preuve de concept, nous avons rapidement réalisé qu’il était trivial de gérer les A/B test soi-même.
+Après avoir validé une preuve de concept, nous avons rapidement réalisé qu’il était trivial de gérer les tests A/B soi-même.
 
 Il s’agit simplement :
 
@@ -49,7 +49,7 @@ Il s’agit simplement :
 
 La partie métrique est également très importante mais nous utilisons simplement notre solution existante (AT Internet ou, pour notre service BI, ajoutons simplement les identifiants de test et de variante aux requêtes d’API).
 
-Comme exemple, j’utiliserais notre 1er test AB ayant consisté à proposer 4 différentes couleurs de bouton sur les différentes pages du site :
+Comme exemple, j’utiliserai notre 1er test AB ayant consisté à proposer 4 différentes couleurs de boutons sur les différentes pages du site :
 
 ![test AB sur les couleurs de bouton](images/web/abtest-buttons.jpg)
 
@@ -84,12 +84,12 @@ Il s’agit de l’`AbTestModel`.
 
 Ce dernier se charge de parser la configuration et de la valider (vérification de la précence des champs, que les totaux des variantes fassent 100 %, etc).
 
-Il offre également une méthode `isTargetted` qui retourne `true` si le test est élligible pour la navigateur courant (s’il répond aux critères).
+Il offre également une méthode `isTargetted` qui retourne `true` si le test est élligible pour le navigateur courant (s’il répond aux critères).
 Cette méthode se décompose en 3 méthodes : `isTargettedByPlatform`, `isTargettedByLocale` et `isTargettedByDate`.
 
 La méthode `getVariant` retourne l’une des variantes en ayant préalablement tiré un chiffre au hasard via `getRandomId`.
 
-Enfin, la méthode `start` est appelé lorsque l’on souhaite démarrer le test.
+Enfin, la méthode `start` est appelée lorsque l’on souhaite démarrer le test.
 Cette dernière change un état interne et se doit de lancer un appel de tag.
 
 
@@ -204,7 +204,7 @@ var AbTestModel = module.exports = Backbone.Model.extend({
 
 Le fichier de configuration est un tableau d’objet JSON.
 
-Nous utilisons donc une collection Backbone, `AbTestCollection`, qui se charge de récupèrer ce fichier via Ajax lors d’un appel sur la méthode `fetch` et d’instancier les modèles `AbTestModel`.
+Nous utilisons donc une collection Backbone, `AbTestCollection`, qui se charge de récupérer ce fichier via Ajax lors d’un appel sur la méthode `fetch` et d’instancier les modèles `AbTestModel`.
 
 ```javascript
 var _           = require('underscore');
@@ -249,12 +249,12 @@ var AbTestCollection = module.exports = Backbone.Collection.extend({
 
 ### 3. Utilisation dans le code
 
-Pour ce test qui consiste à proposer des couleurs de bouton différente, il suffit alors :
+Pour ce test qui consiste à proposer des couleurs de boutons différentes, il suffit alors :
 
-  1. instancier la collection pour récupèrer le test actif,
-  2. Récupèrer la variante de test,
+  1. Instancier la collection pour récupèrer le test actif,
+  2. Récupérer la variante de test,
   3. Ajouter une classe CSS sur le body qui surchargera les couleurs des boutons, ici dans un fichier less.
-  4. Démarrer le test (consistant à envoyer un tag) dès qu’une variante (ou la référence) est affiché à l’utilisateur
+  4. Démarrer le test (consistant à envoyer un tag) dès qu’une variante (ou la référence) est affichée à l’utilisateur
 
 ```javascript
 var variantBookingColor = Mappy.abTestCollection.getVariant("AB01-couleur-resa");
@@ -282,7 +282,7 @@ En effet, concernant les statistiques, nous ne nous intéressons qu’aux person
 
 L’exemple ici est simpliste mais, en laissant la liberté côté JavaScript, il est possibe de réaliser n’importe quel test.
 
-Par exemple, notre second test AB est d’offrir 2 menus de catégorie différents (donc des modification CSS mais également d’autres balises HTML et éventuellement une vue Backbone différente).
+Par exemple, notre second test AB propose 2 menus de catégorie différents (donc des modifications CSS mais également d’autres balises HTML et éventuellement une vue Backbone différente).
 Il est même possible, en ajoutant la variante aux paramètres des resources JSON, de servir des contenus différents et donc d’étendre le test au code serveur.
 
 ## Un nom, un logo : Loligo
@@ -297,4 +297,4 @@ Un logo a été réalisé pour l’occasion :
 ## Pour conclure
 
 La solution apportée répond pleinement à nos besoins et supprime les problèmatiques inhérentes à l’utilisation d’un service externe.
-Nous gagnons en flexibilité, en performances, en sécurité (plus d’inclusion de JS externe) et les AB tests s’intègrent à notre workflow et nos outils (validation du code via jshint|eslint, tests unitaires, tests fonctionnels, etc).
+Nous gagnons en flexibilité, en performances, en sécurité (plus d’inclusion de JS externe) et les tests AB s’intègrent à notre workflow et nos outils (validation du code via jshint|eslint, tests unitaires, tests fonctionnels, etc).
