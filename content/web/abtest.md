@@ -1,13 +1,18 @@
 Title: Une solution simple pour les A/B test
-Date: 2015-12-01
+Date: 2016-01-18
 Slug: solution-simple-ab-tests
 Author: Mappy
 Tags: French,JavaScript,ab,test
-Summary: Une solution simple d’A/B test maison pour les Single Page Application
+Summary: Une solution simple d’A/B test pour les applications web.
 
 Les A/B tests sont aujourd’hui une pratique courante sur les applications web et mobile.
 
-Le principe est de servir une variante pour une fonctionnalité (d’un changement de couleur à des écrans complètement différents) à une partie de son audience et pour une période donnée (par exemple 1 ou 2 semaines).
+Le principe est de proposer une variante pour une fonctionnalité pour une partie de l’audience et ce, pendant une période donnée.
+
+Exemples :
+
+  * changement de couleur d’un bouton,
+  * présentation de produits sous forme de grille plutôt que sous forme de liste.
 
 L’intérêt est ensuite de suivre les métriques (clics, taux de conversion, achats, etc) pour le groupe A (sans variante) et le groupe B (avec la variante).
 
@@ -35,7 +40,7 @@ Le principal inconvénient d’une telle solution est qu’il est difficile de r
 En effet, il est difficile de se brancher sur des appels Ajax ou d’autres comportements et on en revient à "surveiller" des changements sur des éléments DOM.
 Cela n’est pas performant et on constate rapidement du "[flickering](https://en.wikipedia.org/wiki/Flicker_%28screen%29#Software_artifacts)" (version initiale suivi de la variante après quelques millisecondes).
 
-Par ailleurs, l’inclusion d’un script externe est toujours délicate, notamment en terme de performances (requêtes, poids, etc) et de sécurité (non maitrise du script inclus).
+Par ailleurs, l’inclusion d’un script externe est toujours délicate, notamment en terme de performances (requêtes, poids, etc) et de sécurité (non maîtrise du script inclus).
 
 ## Une meilleure solution
 
@@ -82,12 +87,12 @@ Voici le fichier de configuration pour le test sur les couleurs de boutons :
 Nous utilisons un modèle Backbone comme objet pour gérer chaque A/B test.
 Il s’agit de l’`AbTestModel`.
 
-Ce dernier se charge de parser la configuration et de la valider (vérification de la précence des champs, que les totaux des variantes fassent 100 %, etc).
+Ce dernier charge la configuration et la valide (vérification de la présence des champs, que les totaux des variantes fassent 100 %, etc).
 
 Il offre également une méthode `isTargetted` qui retourne `true` si le test est élligible pour le navigateur courant (s’il répond aux critères).
-Cette méthode se décompose en 3 méthodes : `isTargettedByPlatform`, `isTargettedByLocale` et `isTargettedByDate`.
+Cette méthode se décompose en 3 parties : `isTargettedByPlatform`, `isTargettedByLocale` et `isTargettedByDate`.
 
-La méthode `getVariant` retourne l’une des variantes en ayant préalablement tiré un chiffre au hasard via `getRandomId`.
+Une autre méthode, `getVariant`, retourne l’une des variantes en ayant préalablement tiré un chiffre au hasard via `getRandomId`.
 
 Enfin, la méthode `start` est appelée lorsque l’on souhaite démarrer le test.
 Cette dernière change un état interne et se doit de lancer un appel de tag.
@@ -139,7 +144,7 @@ var AbTestModel = module.exports = Backbone.Model.extend({
         }
     },
 
-    // Le navigateur courant correspond t’il à la cible ?
+    // Le navigateur courant correspond-il à la cible ?
     isTargetted: function () {
         return this.isTargettedByDate() && this.isTargettedByPlatform() && this.isTargettedByLocale();
     },
@@ -249,11 +254,11 @@ var AbTestCollection = module.exports = Backbone.Collection.extend({
 
 ### 3. Utilisation dans le code
 
-Pour ce test qui consiste à proposer des couleurs de boutons différentes, il suffit alors :
+Pour ce test qui consiste à proposer des couleurs de boutons différentes, il suffit alors de :
 
-  1. Instancier la collection pour récupèrer le test actif,
+  1. Instancier la collection pour déterminer le test actif,
   2. Récupérer la variante de test,
-  3. Ajouter une classe CSS sur le body qui surchargera les couleurs des boutons, ici dans un fichier less.
+  3. Ajouter une classe CSS sur le `body` qui surchargera les couleurs des boutons, ici dans un fichier `less`.
   4. Démarrer le test (consistant à envoyer un tag) dès qu’une variante (ou la référence) est affichée à l’utilisateur
 
 ```javascript
@@ -280,7 +285,7 @@ Et voici le démarrage du test dès l’affichage d’une liste possédant les b
 En effet, concernant les statistiques, nous ne nous intéressons qu’aux personnes ayant vu la référence ou une variante et non tous les autres visiteurs.
 
 
-L’exemple ici est simpliste mais, en laissant la liberté côté JavaScript, il est possibe de réaliser n’importe quel test.
+L’exemple ici est simpliste mais, en laissant la liberté côté JavaScript, il est possible de réaliser n’importe quel test.
 
 Par exemple, notre second A/B test propose 2 menus de catégorie différents (donc des modifications CSS mais également d’autres balises HTML et éventuellement une vue Backbone différente).
 Il est même possible, en ajoutant la variante aux paramètres des resources JSON, de servir des contenus différents et donc d’étendre le test au code serveur.
@@ -296,5 +301,5 @@ Un logo a été réalisé pour l’occasion :
 
 ## Pour conclure
 
-La solution apportée répond pleinement à nos besoins et supprime les problèmatiques inhérentes à l’utilisation d’un service externe.
+La solution apportée répond pleinement à nos besoins et supprime les problématiques inhérentes à l’utilisation d’un service externe.
 Nous gagnons en flexibilité, en performances, en sécurité (plus d’inclusion de JS externe) et les A/B tests s’intègrent à notre workflow et nos outils (validation du code via jshint|eslint, tests unitaires, tests fonctionnels, etc).
