@@ -11,7 +11,7 @@ Le principe est de servir une variante pour une fonctionnalité (d’un changeme
 
 L’intérêt est ensuite de suivre les métriques (clics, taux de conversion, achats, etc) pour le groupe A (sans variante) et le groupe B (avec la variante).
 
-![Exemple AB test](images/web/AB-testing.png)
+![Exemple A/B test](images/web/AB-testing.png)
 Source de l’image : [Wikipedia](https://fr.wikipedia.org/wiki/Test_A/B)
 
 A l’issue de la période, si les métriques pour la variante sont meilleures que la version normale, on transforme la variante en version par défaut.
@@ -49,13 +49,13 @@ Il s’agit simplement :
 
 La partie métrique est également très importante mais nous utilisons simplement notre solution existante (AT Internet ou, pour notre service BI, ajoutons simplement les identifiants de test et de variante aux requêtes d’API).
 
-Comme exemple, j’utiliserai notre 1er test AB ayant consisté à proposer 4 différentes couleurs de boutons sur les différentes pages du site :
+Comme exemple, j’utiliserai notre 1er A/B test ayant consisté à proposer 4 différentes couleurs de boutons sur les différentes pages du site :
 
-![test AB sur les couleurs de bouton](images/web/abtest-buttons.jpg)
+![A/B test sur les couleurs de bouton](images/web/abtest-buttons.jpg)
 
 ### 1. Fichier de configuration
 
-Mappy héberge le fichier de configuration des tests AB sur [http://ab.mappy.net/config.json](http://ab.mappy.net/config.json).
+Mappy héberge le fichier de configuration des A/B tests sur [http://ab.mappy.net/config.json](http://ab.mappy.net/config.json).
 
 Voici le fichier de configuration pour le test sur les couleurs de boutons :
 ```javascript
@@ -79,7 +79,7 @@ Voici le fichier de configuration pour le test sur les couleurs de boutons :
 
 ### 2. AbTestModel et AbTestCollection
 
-Nous utilisons un modèle Backbone comme objet pour gérer chaque test AB.
+Nous utilisons un modèle Backbone comme objet pour gérer chaque A/B test.
 Il s’agit de l’`AbTestModel`.
 
 Ce dernier se charge de parser la configuration et de la valider (vérification de la précence des champs, que les totaux des variantes fassent 100 %, etc).
@@ -282,7 +282,7 @@ En effet, concernant les statistiques, nous ne nous intéressons qu’aux person
 
 L’exemple ici est simpliste mais, en laissant la liberté côté JavaScript, il est possibe de réaliser n’importe quel test.
 
-Par exemple, notre second test AB propose 2 menus de catégorie différents (donc des modifications CSS mais également d’autres balises HTML et éventuellement une vue Backbone différente).
+Par exemple, notre second A/B test propose 2 menus de catégorie différents (donc des modifications CSS mais également d’autres balises HTML et éventuellement une vue Backbone différente).
 Il est même possible, en ajoutant la variante aux paramètres des resources JSON, de servir des contenus différents et donc d’étendre le test au code serveur.
 
 ## Un nom, un logo : Loligo
@@ -297,4 +297,4 @@ Un logo a été réalisé pour l’occasion :
 ## Pour conclure
 
 La solution apportée répond pleinement à nos besoins et supprime les problèmatiques inhérentes à l’utilisation d’un service externe.
-Nous gagnons en flexibilité, en performances, en sécurité (plus d’inclusion de JS externe) et les tests AB s’intègrent à notre workflow et nos outils (validation du code via jshint|eslint, tests unitaires, tests fonctionnels, etc).
+Nous gagnons en flexibilité, en performances, en sécurité (plus d’inclusion de JS externe) et les A/B tests s’intègrent à notre workflow et nos outils (validation du code via jshint|eslint, tests unitaires, tests fonctionnels, etc).
