@@ -1,5 +1,5 @@
 Title: Une solution simple pour les A/B test
-Date: 2016-01-18
+Date: 2016-01-19
 Slug: solution-simple-ab-tests
 Author: Mappy
 Tags: French,JavaScript,ab,test
