@@ -29,9 +29,9 @@ Le but des A/B tests est de pouvoir tester ce qui fonctionne le mieux en conditi
 
 ## Premier essai sur mappy.com
 
-L’objectif de Mappy est de tester différentes variantes du site web, que cela soit purement graphique ou à travers des écrans/comportements différents.
+L’objectif de [Mappy](http://fr.mappy.com) est de tester différentes variantes du site web, que cela soit purement graphique ou à travers des écrans/comportements différents.
 
-Nous avons initialement utilisé un outil externe fonctionnant via l’inclusion d’un JavaScript externe depuis le site mappy.
+Nous avons initialement utilisé un outil externe fonctionnant via l’inclusion d’un JavaScript externe depuis le [site Mappy](http://fr.mappy.com).
 
 L’avantage d’une telle solution est qu’elle est facilement mise en place sur le site (une simple balise `script`) et que la création des tests peut se faire via l’outil externe en ligne (via du "drag and drop" ou via l’écriture de JavaScript directement dans l’outil).
 
@@ -52,9 +52,9 @@ Il s’agit simplement :
  2. d’analyser ce fichier au chargement du site, de tirer un chiffre au hasard pour déterminer le test à appliquer,
  3. ensuite, pour chaque test, de faire les modifications dans le code pour afficher la variante (ou ne rien faire et afficher la référence).
 
-La partie métrique est également très importante mais nous utilisons simplement notre solution existante (AT Internet ou, pour notre service BI, ajoutons simplement les identifiants de test et de variante aux requêtes d’API).
+La partie métrique est également très importante mais nous utilisons simplement notre solution existante (AT Internet ou, pour notre service BI, ajoutons les identifiants d’A/B test et de variante aux requêtes d’API).
 
-Comme exemple, j’utiliserai notre 1er A/B test ayant consisté à proposer 4 différentes couleurs de boutons sur les différentes pages du site :
+Comme exemple, j’utiliserai notre 1er A/B test ayant consisté à proposer 4 couleurs de boutons différentes :
 
 ![A/B test sur les couleurs de bouton](images/web/abtest-buttons.jpg)
 
@@ -89,7 +89,7 @@ Il s’agit de l’`AbTestModel`.
 
 Ce dernier charge la configuration et la valide (vérification de la présence des champs, que les totaux des variantes fassent 100 %, etc).
 
-Il offre également une méthode `isTargetted` qui retourne `true` si le test est élligible pour le navigateur courant (s’il répond aux critères).
+Il offre également une méthode `isTargetted` qui retourne `true` si le test est éligible pour le navigateur courant (s’il répond aux critères).
 Cette méthode se décompose en 3 parties : `isTargettedByPlatform`, `isTargettedByLocale` et `isTargettedByDate`.
 
 Une autre méthode, `getVariant`, retourne l’une des variantes en ayant préalablement tiré un chiffre au hasard via `getRandomId`.
@@ -254,7 +254,7 @@ var AbTestCollection = module.exports = Backbone.Collection.extend({
 
 ### 3. Utilisation dans le code
 
-Pour ce test qui consiste à proposer des couleurs de boutons différentes, il suffit alors :
+Pour ce test qui consiste à proposer différentes couleurs de boutons, il suffit alors :
 
   1. D’instancier la collection pour déterminer le test actif,
   2. De récupérer la variante de test,
@@ -288,7 +288,7 @@ En effet, concernant les statistiques, nous ne nous intéressons qu’aux person
 L’exemple ici est simpliste mais, en laissant la liberté côté JavaScript, il est possible de réaliser n’importe quel test.
 
 Par exemple, notre second A/B test propose 2 menus de catégorie différents (donc des modifications CSS mais également d’autres balises HTML et éventuellement une vue Backbone différente).
-Il est même possible, en ajoutant la variante aux paramètres des resources JSON, de servir des contenus différents et donc d’étendre le test au code serveur.
+Il est même possible, en ajoutant la variante aux paramètres des ressources JSON, de servir des contenus différents et donc d’étendre le test au code serveur.
 
 ## Un nom, un logo : Loligo
 
