@@ -254,12 +254,12 @@ var AbTestCollection = module.exports = Backbone.Collection.extend({
 
 ### 3. Utilisation dans le code
 
-Pour ce test qui consiste à proposer des couleurs de boutons différentes, il suffit alors de :
+Pour ce test qui consiste à proposer des couleurs de boutons différentes, il suffit alors :
 
-  1. Instancier la collection pour déterminer le test actif,
-  2. Récupérer la variante de test,
-  3. Ajouter une classe CSS sur le `body` qui surchargera les couleurs des boutons, ici dans un fichier `less`.
-  4. Démarrer le test (consistant à envoyer un tag) dès qu’une variante (ou la référence) est affichée à l’utilisateur
+  1. D’instancier la collection pour déterminer le test actif,
+  2. De récupérer la variante de test,
+  3. D’ajouter une classe CSS sur le `body` qui surchargera les couleurs des boutons, ici dans un fichier `less`.
+  4. De démarrer le test (consistant à envoyer un tag) dès qu’une variante (ou la référence) est affichée à l’utilisateur
 
 ```javascript
 var variantBookingColor = Mappy.abTestCollection.getVariant("AB01-couleur-resa");
