@@ -29,12 +29,12 @@ Vous aurez besoin de :
 
 ## Déroulement de la rétrospective
 
-Sur un tableau blanc, préparer trois colonnes dans lesquelles les partcipants viendront placer leurs post-its :
+Sur un tableau blanc, préparer trois colonnes dans lesquelles les participants viendront placer leurs post-its :
 +	*On en a gros !* : Qu'est-ce qui ne va pas ?
 +	*Le Graal* : le but à atteindre (au niveau de l'équipe, ou au niveau personnel)
 +	*Excalibur* : ce qui peut aider l'équipe à atteindre le Graal'
 
-Distribuer le QCM aux participants, qui ont toute la durée de la rétrospective pour le remplir. Eventuellement, proposer une récompense pour celui qui a aura le plus de bonnes réponses, mais le but est principalement d'instaurer une aura de bonne humeur généralisée. Comme ce sont des questions à choix multiples, même les personnes ne connaissant pas la série peuvent répondre correctement.
+Distribuer le QCM aux participants, qui ont toute la durée de la rétrospective pour le remplir. Eventuellement, proposer une récompense pour celui qui a le plus de bonnes réponses, mais le but est principalement d'instaurer une aura de bonne humeur généralisée. Comme ce sont des questions à choix multiples, même les personnes ne connaissant pas la série peuvent répondre correctement.
 
 Ensuite, la réunion se déroule de manière classique : une fois tous les post-its placés au tableau, on vote pour les sujets dont on veut débattre durant le temps qu'il reste. Avant de lancer les discussions, chacun pioche un personnage de Kammelott et on forme des binômes de chevaliers (par exemple : Perceval et Karadoc, Yvain et Gauvain, Guethenoc et Roparz'h, Merlin et Elias...).
 Chaque binôme devra trouver une quête à réaliser pour la quête du Graal, avant la prochaine rétrospective, que ce soit pour aider l’équipe à atteindre un des Graals déterminés pendant la réunion, ou pour faciliter le travail de l’équipe, améliorer l’ambiance...
