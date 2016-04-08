@@ -27,7 +27,7 @@ How to publish
 
 Simply push your(s) commit(s).
 
-Travis will then build and publish your work.
+Travis will then build and publish your work into the output repository (mappy.github.io).
 
 References
 ----------
