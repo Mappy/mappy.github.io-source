@@ -25,7 +25,7 @@ Que cela soit côté client (setTimeout, XMLHttpRequest, Geolocation.getCurrentP
 
 Lorsque de nombreuses fonctions asynchrones s’enchaînent (comme par exemple plusieurs appels Ajax), on aboutit rapidement à ce qu’on appelle la “pyramide de l’enfer” (ou “Pyramid of Doom”) :
 
-```
+```javascript
 action1(function (v1) {
     action2(v1, function(v2) {
         action3(v2, function(v3) {
@@ -40,7 +40,7 @@ On se rend bien compte que maintenir un tel code est relativement pénible (imag
 
 Sur le site mappy.com, nous utilisons très régulièrement des enchainements d'appels asynchrones. Un des cas les plus parlants est le calcul d'itinéraire : nous géolocalisons les adresses de départ et d'arrivée, puis nous calculons l'itinéraire avant de l'afficher à l'utilisateur. Ce qui pouvait donner :
 
-```
+```javascript
 var addresses = [];
 geocode('Paris', function(result) {
     addresses.push(result);
@@ -60,7 +60,7 @@ C’est là qu’interviennent les promesses, qui sont une des façons de “rem
 Le terme `promise` a été proposé par Daniel Friedman et David Wise en 1976 à travers la conférence « The Impact of Applicative Programming on Multiprocessing » à l’International Conference on Parallel Processing. Les promesses sont à rapprocher des `futurs` (`futures`) ou `délais` (`delays`) que l’on retrouve notamment en `Dart`, en `Python`, en `Java` (`java.util.concurrent.Future`), en `Scala`, [etc](https://en.wikipedia.org/wiki/Futures_and_promises#List_of_implementations).
 
 Avec les promesses, le code présenté en introduction pourrait s’écrire de la sorte :
-```
+```javascript
 action1()
 .then(action2)
 .then(action3)
@@ -70,7 +70,7 @@ action1()
 });
 ```
 et le code simplifié du calcul d’itinéraire pourrait s’écrire ainsi :
-```
+```javascript
 var addresses = [];
 geocode('Paris')
 .then(function(result) {
@@ -97,7 +97,7 @@ Néanmoins, Q a été choisie par rapport aux `Deferred` de jQuery principalemen
 Par ailleurs, les `Deferred` de jQuery ne sont pas compatibles avec la spécification [Promise/A+](https://promisesaplus.com/), donc sujets à plus de travail en cas de changement de librairie (voici la liste de [librairie et leur compatibilité face à la spécification](https://github.com/promises-aplus/promises-spec/blob/master/implementations.md)).
 
 Si l’on reprend l’exemple simplifié du calcul d’itinéraire précédent, le code s’écrira de la sorte via `Q` :
-```
+```javascript
 Q.all([
     geocode('Paris'),
     geocode('Lyon')
@@ -109,7 +109,7 @@ Q.all([
 Le `fail` s’applique à n’importe quelle erreur ayant lieu au sein des fonctions précédemment appelées.
 
 Voici l’implémentation d’une fonction, par exemple `geocode` :
-```
+```javascript
 var geocode = function (address) {
     var deferred = Q.defer();
     // Lancement d’une requête Ajax, etc
@@ -142,7 +142,7 @@ Bien sûr, nous utilisons un polyfill ([es6-promise](https://github.com/jakearch
 Ce polyfill est un sous-ensemble de [rsvp.js](https://github.com/tildeio/rsvp.js), une implémentation plus complète.
 
 Voici comment on déclarerait la fonction geocode avec une promesse native :
-```
+```javascript
 var geocode = function (address) {
     var promise = new Promise(function (resolve, reject) {
         // Lancement d’une requête Ajax, etc
@@ -156,7 +156,7 @@ var geocode = function (address) {
 };
 ```
 L’intérêt est de retourner immédiatement la promesse. On utilisera la méthode ci-dessus ainsi :
-```
+```javascript
 geocode()
 .then(function (result) {
 }).catch (function (error) {
@@ -164,7 +164,7 @@ geocode()
 ```
 
 Le `catch` est un mot réservé et pose problème sous Internet Explorer, aussi, on préférera cette seconde syntaxe :
-```
+```javascript
 geocode()
 .then(function (result) {
 }).then(undefined, function (error) {
@@ -174,7 +174,7 @@ geocode()
 Vous trouverez des exemples plus concret avec un appel Ajax à travers 2 JsFiddle, le [premier](http://jsfiddle.net/2ve41szc/) avec l’utilisation du `catch`, le [second](http://jsfiddle.net/2ve41szc/1/) avec la deuxième forme.
 
 Il est également possible de lancer plusieurs promesses en parallèle (requete1 et requete2 dans cet exemple) via cette syntaxe :
-```
+```javascript
 var promise = Promise.all([
     requete1,
     requete2
@@ -184,7 +184,7 @@ var promise = Promise.all([
 ```
 
 Nous avons donc, avec notre exemple d'itinéraire habituel :
-```
+```javascript
 Promise.all([
     geocode('Paris'),
     geocode('Lyon')
@@ -200,7 +200,7 @@ Les promesses natives avec un polyfill sont sans doute une des approches les plu
 
 Cela pourrait néanmoins changer puisqu’une proposition pour ECMAScript 7 (ou ES7) introduit le mot clé `await` permettant de résoudre des fonctions asynchrones en les écrivant de façon synchrone :
 
-```
+```javascript
 async function itinerary() {
   let paris     = await geocode('Paris');
   let lyon      = await geocode('Lyon');
