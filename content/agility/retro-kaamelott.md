@@ -1,5 +1,5 @@
 Title: La Rétrospective de La Table Ronde
-Date: 2016-03-18
+Date: 2016-04-08
 Slug: agility
 Authors: Mappy
 Tags: Agilite,Retrospective
@@ -39,4 +39,4 @@ Distribuer le QCM aux participants, qui ont toute la durée de la rétrospective
 Ensuite, la réunion se déroule de manière classique : une fois tous les post-its placés au tableau, on vote pour les sujets dont on veut débattre durant le temps qu'il reste. Avant de lancer les discussions, chacun pioche un personnage de Kammelott et on forme des binômes de chevaliers (par exemple : Perceval et Karadoc, Yvain et Gauvain, Guethenoc et Roparz'h, Merlin et Elias...).
 Chaque binôme devra trouver une quête à réaliser pour la quête du Graal, avant la prochaine rétrospective, que ce soit pour aider l’équipe à atteindre un des Graals déterminés pendant la réunion, ou pour faciliter le travail de l’équipe, améliorer l’ambiance...
 
- 
+
