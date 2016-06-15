@@ -109,7 +109,7 @@ Three.js implémente cette fonctionnalité via [StereoEffect][19] et [DeviceOrie
 
 [Mappy][24] propose plusieurs [modes d’intégration][23] pour ses cartes ou sa vue 360.
 L’un des modes se présente sous la forme d’un widget (tel que l’exemple en haut de cette page).
-N’hésitez pas à nous contacter (deportalisation[AT]mappy.com) si une intégration sur votre site ou vos applications mobiles vous intéresse.
+N’hésitez pas à nous contacter (contact[AT]mappy.com) si une intégration sur votre site ou vos applications mobiles vous intéresse.
 
 
   [1]: http://fr.mappy.com/#/436/M1/TSearch/Sparis/N1090.14493,12.34393,2.34821,48.85369/Z7/
