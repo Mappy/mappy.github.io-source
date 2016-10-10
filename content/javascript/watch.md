@@ -47,7 +47,7 @@ Par extension, on appelle également `watching` :
 
 ## Watchify
 
-[Watchify](https://github.com/substack/watchify) est un plugin `browserify`. Il peut s'ajouter à la configuration grâce à l'attribut `plugins` ou via un `wrapper` :
+[Watchify](https://github.com/substack/watchify) est un plugin `browserify`. Il peut s'ajouter à la configuration grâce à l'attribut `plugin` ou via un `wrapper` :
 
 ```javascript
 var fs          = require('fs');
@@ -75,7 +75,7 @@ watchify(browserify(Object.assign({
 }, watchify.args))).bundle().pipe(bundleWS);
 ```
 
-Vous avez surement remarqué qu'on ajoute en plus des `watchify.args` à browserify, ces arguments sont :
+Vous avez sûrement remarqué qu'on ajoute en plus des `watchify.args` à browserify, ces arguments sont :
 ```javascript
 {
     cache: {},
@@ -111,7 +111,7 @@ browserify(Object.assign({
     .pipe(livereload);
 ```
 
-Et oui, `gulp-livereload` a juste besoin d'être "pipé" pour être fonctionnel (la puissance des `streams` et gulp...).
+Et oui, `gulp-livereload` a juste besoin d'être "pipé" pour être fonctionnel (la puissance des `streams` et de gulp...).
 
 Ensuite, l'appel au script `livereload.js` doit être ajouté dans la page HTML :
 
