@@ -2,14 +2,14 @@ Title: Javascript: la construction à la volée (watching) avec Browserify
 Date: 2016-10-06
 Slug: browerify-la-construction-a-la-volee
 Authors: Mappy
-Tags: French,JavaScript,watching,browerify,watchify,livereload
+Tags: French,JavaScript,watching,browserify,watchify,livereload
 Summary: Article présentant la création du bundle à chaque modification des fichiers sources avec Browserify
 
-# Browerify, c'est quoi déjà ?
+# Browserify, c'est quoi déjà ?
 
-De manière simple, [browserify](http://browserify.org/) permet d'avoir accès à l'écosystème de NodeJS (`NPM`, `CommonJS`) avec des scripts destinés au browser.<br />
-Browserify est lui même un écosystème à part entière car il s'accompagne de `plugins` et de `transforms` afin de pouvoir l'adapter à ses besoins.<br />
-Après avoir installé le module via `NPM`, il peut s'utiliser directement en ligne de commande :
+De manière simple, [browserify](http://browserify.org/) permet d'avoir accès à l'écosystème de NodeJS (`NPM`, `CommonJS`) avec des scripts destinés au navigateur (browser).
+
+Après avoir installé le module browserify via `NPM`, il peut s'utiliser directement en ligne de commande :
 
 ```
 browserify main.js -o bundle.js
@@ -27,29 +27,31 @@ browserify({
 }).bundle().pipe(bundleWS);
 ```
 
-On remarque immédiatement que `browserify` utilise des flux textes ou [text streams](http://www.sandersdenardi.com/readable-writable-transform-streams-node/) comme format de sortie via `bundle()`,
-ce qui permet une grande souplesse mais ausi de  pouvoir l'utiliser avec d'autres outils utilisant les streams comme [gulp](http://gulpjs.com/) (attention car ce dernier utilise un format de stream bien à lui basé sur le file system [vinyl](https://github.com/gulpjs/vinyl), il faudra donc convertir le `text stream` en ce format avant d'utiliser des pipes `Gulp`).
+On remarque immédiatement que `browserify` utilise des flux textes ou [text streams](http://www.sandersdenardi.com/readable-writable-transform-streams-node/) comme format de sortie via `bundle()`.
+Cela permet une grande souplesse mais ausi de  pouvoir l'utiliser avec d'autres outils utilisant les streams comme [gulp](http://gulpjs.com/).
+Attention car ce dernier utilise un format de stream spécifique, basé sur le système de fichier : [vinyl](https://github.com/gulpjs/vinyl). Il faudra donc convertir le `text stream` en ce format avant d'utiliser des pipes gulp.
 
-Browserify propose des `transforms`, qui sont des tranformateurs de flux, comme la minification (`uglify`) ou l'ajout de scripts de librairies tiers comme `bower` ou `shim`.<br />
-On peut aussi lui ajouter des greffons (plugins) afin d'ajouter à `browserify` d'autres capacités comme le `watching` avec Watchify.
+Browserify propose des `transforms`, qui sont des tranformateurs de flux, comme la minification (`uglify`) ou l'ajout de scripts de librairies tiers comme `bower` ou `shim`.
+On peut aussi lui ajouter des greffons (`plugins`) afin d'ajouter à `browserify` d'autres capacités comme le `watching` avec Watchify.
 
-# A quoi consiste de watching ?
+# A quoi consiste la construction à la volée (watching) ?
 
-Il s'agit littéralement de vérifier l'état d'un ensemble de fichiers et de déclencher un processus à chaque modification.<br />
-Par extention, on appel également `watching`:
+Il s'agit littéralement de vérifier l'état d'un ensemble de fichiers et de déclencher un processus à chaque modification.
 
-+ la construction d'un nouveau build à chaque modification
-+ et dans le cas de scripts navigateurs, le reload de la page (`livereload`)
+Par extension, on appelle également `watching` :
+
++ la construction d'un nouveau livrable à chaque modification,
++ et dans le cas de scripts navigateurs, le rechargement de la page (`livereload`)
 
 # Comment le met-on en place ?
 
 ## Watchify
 
-[Watchify](https://github.com/substack/watchify) est un plugin `browserify`, il peut s'ajouter à la config grâce à l'attribut `plugins` ou via un `wrapper`:
+[Watchify](https://github.com/substack/watchify) est un plugin `browserify`. Il peut s'ajouter à la configuration grâce à l'attribut `plugins` ou via un `wrapper` :
 
 ```javascript
 var fs          = require('fs');
-var browserify  = require('browerify');
+var browserify  = require('browserify');
 var watchify    = require('watchify');
 var bundleWS    = fs.createWriteStream(__dirname + '/bundle.js');
 
@@ -63,7 +65,7 @@ Ou
 
 ```javascript
 var fs          = require('fs');
-var browserify  = require('browerify');
+var browserify  = require('browserify');
 var watchify    = require('watchify');
 var bundleWS    = fs.createWriteStream(__dirname + '/bundle.js');
 
@@ -73,23 +75,25 @@ watchify(browserify(Object.assign({
 }, watchify.args))).bundle().pipe(bundleWS);
 ```
 
-Vous avez surement remarqué qu'on ajoute en plus des `watchify.args` à `browserify`, ces arguments sont:
+Vous avez surement remarqué qu'on ajoute en plus des `watchify.args` à browserify, ces arguments sont :
 ```javascript
 {
     cache: {},
     packageCache: {}
 }
 ```
-En fait, ces options permettent d'activer le cache des sources et des modules `NPM` de `browserify`, ce qui permet à `watchify` de reconstruire les livrables de manière incrémentale.<br />
-Il est évident que la création du livrable est nettement plus rapide de cette manière, d'ailleurs `watchify` impose ces options et ne surveille pas si elles ne sont pas positionnées.
+En fait, ces options permettent d'activer le cache des sources et des modules `NPM` de `browserify`. Cela permet à `watchify` de reconstruire les livrables de manière incrémentale.
 
-Seulement quelques millisecondes sont nécéssaires pour reconstruire les sources grâce à la construction incrémentale :
+Il est évident que la création du livrable est nettement plus rapide de cette manière, d'ailleurs `watchify` impose ces options et ne fait rien le cas échéant.
+
+Seulement quelques millisecondes sont nécessaires pour reconstruire les sources grâce à la construction incrémentale :
 
 ![Watchify](images/watchify.gif)
 
 ## Livereload
 
-Une fois les sources construites, il est pratique de recharger la page immédiatement et automatiquement, `livereload` permet celà grâce aux [WebSockets](https://developer.mozilla.org/fr/docs/WebSockets).<br />
+Une fois les sources construites, il est pratique de recharger la page immédiatement et automatiquement. C’est là qu’intervient `livereload`, qui grâce aux [WebSockets](https://developer.mozilla.org/fr/docs/WebSockets), recharge la page à chaque reconstruction.
+
 Nous allons utiliser `gulp-livereload` et voir ainsi comment on combine les différents `streams` :
 
 ```javascript
@@ -107,15 +111,16 @@ browserify(Object.assign({
     .pipe(livereload);
 ```
 
-Et oui, `gulp-livereload` a juste besoin d'être "pipé" pour être fonctionnel, la puissance des `streams` et `gulp`...
+Et oui, `gulp-livereload` a juste besoin d'être "pipé" pour être fonctionnel (la puissance des `streams` et gulp...).
 
-L'appel au script `livereload.js` doit être ajouté dans la page HTML :
+Ensuite, l'appel au script `livereload.js` doit être ajouté dans la page HTML :
 
 ```html
 <script src="http://localhost:35729/livereload.js"></script>
 ```
-Il peut aussi être chargé via un plugin navigateur pour ne pas polluer la page.<br />
-Si le HTTPS est nécéssaire, comme sur le site Mappy, préférez le plugin [RemoteLivereload](https://chrome.google.com/webstore/detail/remotelivereload/jlppknnillhjgiengoigajegdpieppei) (Chrome/Chromium) à [Livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) (Chrome/Chromium).
+
+Il peut aussi être chargé via un plugin navigateur comme [Livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) (Chrome/Chromium) pour ne pas polluer la page.
+Si HTTPS est nécéssaire (comme sur le site Mappy), préférez le plugin [RemoteLivereload](https://chrome.google.com/webstore/detail/remotelivereload/jlppknnillhjgiengoigajegdpieppei) (Chrome/Chromium) à Livereload.
 
 Au sujet d'HTTPS, voici conmment on ajoute la clé et le certificat à `gulp-livereload` :
 ```javascript
