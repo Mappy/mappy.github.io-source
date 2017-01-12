@@ -1,7 +1,7 @@
 Title: Vues 360 en WebGL
 Date: 2015-11-05
 Slug: vues-360-en-webgl
-Authors: Mappy
+Author: paulgreg
 Tags: French,JavaScript,WebGL,three.js
 Summary: Cet article présente la migration des vues 360 depuis Flash vers WebGL
 

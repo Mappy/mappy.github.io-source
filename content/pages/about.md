@@ -1,7 +1,7 @@
 Title: About
 Date: 2014-01-06
 Slug: About
-Author: Mappy
+Author: Audrey Malherbe
 Summary: About us
 
 

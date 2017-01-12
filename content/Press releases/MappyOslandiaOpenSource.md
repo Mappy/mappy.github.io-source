@@ -1,7 +1,7 @@
 Title: Mappy et Oslandia vers l'OpenSource
 Date: 2014-02-11
 Slug: Mappy et Oslandia vers l'OpenSource
-Author: Mappy
+Author: Audrey Malherbe
 Tags: French,Mapnik,PostGIS,OpenSource
 Summary: Depuis plus de deux ans, Oslandia accompagne Mappy dans sa transition vers l’OpenSource. La première étape est symbolisée par le projet de migration des bases de données Oracle du backoffice cartographique vers PostGIS.
 

@@ -1,7 +1,7 @@
 Title: PyLR, an OpenLR decoder in python
 Date: 2014-12-04
 Slug: PyLR, an OpenLR decoder in python
-Author: Mappy
+Author: Audrey Malherbe
 Tags: OpenLR,Python,OpenSource,English
 Summary: An Open source python implementation of OpenLR specification.
 

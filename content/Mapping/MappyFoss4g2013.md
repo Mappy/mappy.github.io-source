@@ -1,7 +1,7 @@
 Title: FOSS4G 2013 : Mappy-ing OpenSource
 Date: 2013-09-25
 Slug: FOSS4G 2013 : Mappy-ing Open Source
-Author: Mappy
+Author: Audrey Malherbe
 Tags: English,Mapnik,PostGIS,OpenSource
 Summary: Feedback on the overhaul of the mapping engine of Mappy around Mapnik and PostGIS.
 

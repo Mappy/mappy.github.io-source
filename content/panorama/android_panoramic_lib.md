@@ -1,7 +1,7 @@
 Title: Android StreetView-like 360 panorama with OpenGl
 Date: 2014-08-04
 Slug: Android StreetView-like 360 panorama
-Author: Mappy
+Author: JohnFromMappy
 Tags: Android,panorama,360,ray-picking,OpenGL,English
 Summary: Display StreetView-like panoramas on Android devices, with interactive arrows to move from a view to the next, based on 360 photos with cubic projection.
 
