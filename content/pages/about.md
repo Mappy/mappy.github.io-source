@@ -5,4 +5,4 @@ Author: Audrey Malherbe
 Summary: About us
 
 
-Mappy labs is a blog focused on the latest tips, tricks and hacks for all things related to technology used by the Mappy's technical team. 
+Mappy labs is a blog focused on the latest tips, tricks and hacks for all things related to technology used by the Mappy's technical team.

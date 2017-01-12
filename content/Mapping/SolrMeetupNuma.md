@@ -1,7 +1,7 @@
 Title: Meet Up Enterprise Search Paris
 Date: 2015-04-08
 Slug: Meet Up Enterprise Search Paris
-Author: jbernardes
+Author: Jérôme Bernardes
 Tags: Solr,OpenSource,MeetUp
 Summary: Découvrez la présentation effectué par Mappy lors du dernier Meet Up Enterprise Search Paris
 

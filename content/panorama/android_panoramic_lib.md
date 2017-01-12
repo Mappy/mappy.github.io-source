@@ -1,7 +1,7 @@
 Title: Android StreetView-like 360 panorama with OpenGl
 Date: 2014-08-04
 Slug: Android StreetView-like 360 panorama
-Author: JohnFromMappy
+Author: Jonathan Baby
 Tags: Android,panorama,360,ray-picking,OpenGL,English
 Summary: Display StreetView-like panoramas on Android devices, with interactive arrows to move from a view to the next, based on 360 photos with cubic projection.
 
@@ -25,7 +25,7 @@ Still, these two did not exactly match our needs :
 
 > Available on Google Play, [Mappy for Android][11].
 
-Let's describe the main technical aspects we implemented building our own *PanoramicLib*. 
+Let's describe the main technical aspects we implemented building our own *PanoramicLib*.
 
 
 
@@ -52,7 +52,7 @@ In *PanoramicLib* source :
 
 # Progressive resolution loading
 
-Our panorama images are provided through Web services. For faster loading, low resolution bitmaps (128 * 128) are first downloaded. Higher resolutions are progressively downloaded, updating the cube faces to sharper textures. For high resolutions, faces are divided in multiple tiles of 512 * 512 pixels. 
+Our panorama images are provided through Web services. For faster loading, low resolution bitmaps (128 * 128) are first downloaded. Higher resolutions are progressively downloaded, updating the cube faces to sharper textures. For high resolutions, faces are divided in multiple tiles of 512 * 512 pixels.
 
 ![Multiple bitmap tiles per face possibilities](images/panoramic_cube_03.png)
 
@@ -90,7 +90,7 @@ The idea with ray-picking is to compute a 3D ray between the camera and the poin
 The picking code comes from [Ivan Schuetz "Android OpenGL Picking"][6] GitHub project.
 It refers to [Gregory Beauchamp "Ray picking on Android"][7] article.
 
-We adaptated the code to take the picking out of the OpenGL thread. In `PanoramicLib`, we notify the `Activy` on way arrow click to load next panorama view. This has to run on the UI thread. 
+We adaptated the code to take the picking out of the OpenGL thread. In `PanoramicLib`, we notify the `Activy` on way arrow click to load next panorama view. This has to run on the UI thread.
 
 In Ivan Schuetz example, ray intersect computing is done in `ExampleGLRenderer.onDrawFrame(GL10 gl)` [(source)][8], calling `ExampleGLObject.draw(GL10 gl, Ray ray)` on each scene object. Intersections are logged to Android LogCat from there [(source)][9]. It runs on the OpenGL thread because it requires the OpenGL context to grab projection and modelview matrixes to compute ray and projected objects coordinates.
 
