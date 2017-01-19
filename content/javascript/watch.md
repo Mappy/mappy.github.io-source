@@ -88,7 +88,7 @@ Il est évident que la création du livrable est nettement plus rapide de cette 
 
 Seulement quelques millisecondes sont nécessaires pour reconstruire les sources grâce à la construction incrémentale :
 
-![Watchify](images/watchify.gif)
+![Watchify](images/javascript/watchify.gif)
 
 ## Livereload
 
