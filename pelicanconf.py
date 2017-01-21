@@ -19,6 +19,8 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS =  (('Mappy', 'https://www.mappy.com/'),
+          ('Appli Android', 'https://play.google.com/store/apps/details?id=com.mappy.app'),
+          ('Appli iOS', 'https://itunes.apple.com/fr/app/mappy-itineraire-et-recherche/id313834655?mt=8'),
           ('Blog Mappy', 'http://corporate.mappy.com'),
           ('API Mappy', 'http://corporate.mappy.com/faq/integrez-mappy/'),
          )
