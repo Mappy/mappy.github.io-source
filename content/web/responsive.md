@@ -2,7 +2,8 @@ Title: Mappy.com dorénavant responsive !
 Date: 2015-07-09
 Slug: mappy-responsive
 Author: Grégory Paul
-Tags: French,JavaScript,responsive
+Category: Web
+Tags: français,javascript,responsive
 Summary: Explications du remplacement du site Mappy et du site mobile par un unique site responsive.
 
 Depuis le mercredi 20 mai, mappy.com propose un site unique et responsive pour tous les navigateurs (bureau, tablette ou mobile).

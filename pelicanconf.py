@@ -17,6 +17,9 @@ FEED_ALL_ATOM = 'feeds/rss.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s/rss.xml'
 TRANSLATION_FEED_ATOM = None
 
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["tag_cloud"]
+
 # Blogroll
 LINKS =  (('Mappy', 'https://www.mappy.com/'),
           ('Appli Android', 'https://play.google.com/store/apps/details?id=com.mappy.app'),

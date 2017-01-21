@@ -2,7 +2,8 @@ Title: mappy.com migre vers Leaflet
 Date: 2015-02-04
 Slug: mappy-com-migre-vers-leaflet
 Author: Grégory Paul
-Tags: Leaflet,OpenSource,French,JavaScript
+Category: Web
+Tags: français,leaflet,opensource,javascript
 Summary: mappy.com utilise dorénavant l’API OpenSource Leaflet plutôt que son API cartographique “maison”.
 
 # Nouvelle version du site, nouvelle cartographie

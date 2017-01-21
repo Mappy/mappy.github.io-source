@@ -2,7 +2,8 @@ Title: Vues 360 en WebGL
 Date: 2015-11-05
 Slug: vues-360-en-webgl
 Author: Grégory Paul
-Tags: French,JavaScript,WebGL,three.js
+Category: Web
+Tags: français,javascript,webgl
 Summary: Cet article présente la migration des vues 360 depuis Flash vers WebGL
 
 Le site [Mappy][24] offre depuis 2011 des [vues 360°][1] des [320 villes][16] plus grandes villes de France :

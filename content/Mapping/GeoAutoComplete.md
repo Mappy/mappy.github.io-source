@@ -2,7 +2,8 @@ Title: Super flexible GeoAutoComplete with Solr
 Date: 2014-02-25
 Slug: Super flexible GeoAutoComplete with Solr
 Author: Jérôme Bernardes
-Tags: Solr,OpenSource,English
+Category: Solr
+Tags: english,solr,GIS,opensource
 Summary: How to build an autocompletion service with geographical context using solr
 
 # Super flexible GeoAutoComplete with Solr #

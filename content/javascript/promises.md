@@ -2,7 +2,8 @@ Title: JavaScript : de Q aux promesses natives
 Date: 2015-04-08
 Slug: javascript-de-Q-aux-promesses-natives
 Author: Grégory Paul
-Tags: French,JavaScript
+Category: Web
+Tags: français,javascript
 Summary: Cet article présente pourquoi le site Mappy a d’abord utilisé la librairie [Q](https://github.com/kriskowal/q) avant de migrer vers des promesses natives.
 
 

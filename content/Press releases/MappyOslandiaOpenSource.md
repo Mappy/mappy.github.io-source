@@ -2,11 +2,12 @@ Title: Mappy et Oslandia vers l'OpenSource
 Date: 2014-02-11
 Slug: Mappy et Oslandia vers l'OpenSource
 Author: Audrey Malherbe
-Tags: French,Mapnik,PostGIS,OpenSource
+Category: GIS
+Tags: français,mapnik,postGIS,opensource
 Summary: Depuis plus de deux ans, Oslandia accompagne Mappy dans sa transition vers l’OpenSource. La première étape est symbolisée par le projet de migration des bases de données Oracle du backoffice cartographique vers PostGIS.
 
 
-Paris, le 11 février 2014. 
+Paris, le 11 février 2014.
 
 Depuis plus de deux ans, Oslandia accompagne Mappy dans sa transition vers l’OpenSource. La première étape est symbolisée par le projet de migration des bases de données Oracle du backoffice cartographique vers PostGIS. Celui-ci vient notamment d’être finalisé et fonctionne actuellement en production.
 
@@ -22,7 +23,7 @@ Oracle et SQL Server ont été entièrement remplacés par PostgreSQL et PostGIS
 
 La migration vers ces composants OpenSource a permis de rationnaliser et d’optimiser l’architecture du composant « carte »:
 
-* Temps de traitement des données réduit 
+* Temps de traitement des données réduit
 * Standardisation des formats et API
 * Forte diminution de la dette technique
 * Nombre de lignes de code optimisé
@@ -38,7 +39,7 @@ PostGIS, la base de données géographique supportant toute l’infrastructure, 
 
 La base de 75Go bénéficie des toutes dernières avancées de PostgreSQL et PostGIS, tels que la réplication au fil de l’eau, les nouvelles fonctions géographiques de PostGIS, les requêtes CTE récursives, le support de JSON et bien plus.
 
-Audrey Malherbe, responsable du projet chez Mappy, souligne que le choix de PostgreSQL et de PostGIS était une évidence : 
+Audrey Malherbe, responsable du projet chez Mappy, souligne que le choix de PostgreSQL et de PostGIS était une évidence :
 >« Nous voulions basculer dans l’OpenSource en nous appuyant sur des technologies performantes et reconnues comme PostGIS. Il était important pour nous de contribuer à l’OpenSource et l’expertise technique d’Oslandia et son implication dans la communauté nous ont permis de nous lancer dans cette aventure en toute confiance. »
 
 Mappy a l’intention de continuer ce virage vers l’OpenSource et d’étendre la méthode de migration aux autres services de la plateforme cartographique.
@@ -61,4 +62,4 @@ Mappy est une filiale à 100% de Solocal Group. <http://www.mappy.com>
 
 Oslandia est une ENL (Entreprise du Numérique Libre) Française spécialisée en systèmes d’information géographique (SIG) Open Source, et particulièrement en bases de données spatiales, Web Services OGC et SIG bureautiques. Oslandia propose une offre de service complète : conseil, audit, développement, support, formation.
 
-<http://www.oslandia.com> 
+<http://www.oslandia.com>

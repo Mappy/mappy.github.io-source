@@ -2,7 +2,8 @@ Title: PyLR, an OpenLR decoder in python
 Date: 2014-12-04
 Slug: PyLR, an OpenLR decoder in python
 Author: Audrey Malherbe
-Tags: OpenLR,Python,OpenSource,English
+Category: GIS
+Tags: english,openlr,python,opensource
 Summary: An Open source python implementation of OpenLR specification.
 
 # PyLR, an OpenLR decoder in python #
@@ -26,7 +27,7 @@ It is partial in the sense that only parser/decoder is provided, encoding et ser
 
 While still a work in progress, it is actually used in production here at Mappy.
 For information, our implementation fail to decode less than 1% of the collected traffic situations, which correspond mostly to mismatched data with our network database.
- 
+
 PyLR implement a decoder from the binary/base64 data representation (xml is not handled at the moment). It implements also a decoder that use an abstract representationof the targeted map.
 
 

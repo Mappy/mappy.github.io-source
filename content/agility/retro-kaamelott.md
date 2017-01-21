@@ -2,7 +2,8 @@ Title: La Rétrospective de La Table Ronde
 Date: 2016-04-08
 Slug: agility
 Author: Xavier Coutin
-Tags: Agilite,Retrospective
+Category: Agile
+Tags: français,agilité,rétrospective
 Summary: Une variante de rétrospective agile
 
 ## Enjeux de cette rétrospective

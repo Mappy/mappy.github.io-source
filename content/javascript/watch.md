@@ -2,7 +2,8 @@ Title: Javascript: la construction à la volée (watching) avec Browserify
 Date: 2016-10-06
 Slug: browerify-la-construction-a-la-volee
 Author: Vivien Ripoche
-Tags: French,JavaScript,watching,browserify,watchify,livereload
+Category: Web
+Tags: français,javascript,watch,browserify,livereload
 Summary: Article présentant la création du bundle à chaque modification des fichiers sources avec Browserify
 
 # Browserify, c'est quoi déjà ?

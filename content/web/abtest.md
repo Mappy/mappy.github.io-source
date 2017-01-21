@@ -2,7 +2,8 @@ Title: Une solution simple pour les A/B test
 Date: 2016-01-19
 Slug: solution-simple-ab-tests
 Author: Grégory Paul
-Tags: French,JavaScript,ab,test
+Category: Web
+Tags: français,javascript,abtest
 Summary: Une solution simple d’A/B test pour les applications web.
 
 Les A/B tests sont aujourd’hui une pratique courante sur les applications web et mobile.
