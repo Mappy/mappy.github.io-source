@@ -1,0 +1,34 @@
+@startuml
+hide footbox
+actor User
+participant Serveur
+participant Controller
+control AMIB
+participant View
+participant Navigateur
+
+== Serveur ==
+User -> Serveur : GET /
+Serveur -> Controller
+Controller -> AMIB : renderToString
+
+== Client ==
+Serveur -> Navigateur
+Navigateur --> Navigateur : Parsing JS
+Navigateur -> Controller
+Controller -> AMIB : renderToDOM
+
+== Serveur & Client ==
+AMIB -> View : getJSON()
+AMIB -> View : remplate.render(json)
+AMIB <-- View : render (to DOM / to String)
+@enduml
+
+@startuml
+package "RecursiveChildrenView" {
+    package "OneChildrenWithModelView" {
+        package "NoChildrenWithPromiseModelView" {
+        }
+    }
+}
+@enduml
