@@ -2,7 +2,7 @@ Title: Backbone isomorphique maison : comment ?
 Date: 2018-01-31
 Slug: comment-backbone-isomorphique
 Author: Nicolas Bétheuil, Grégory Paul, Manuel Emeriau
-Tags: french,JavaScript,NodeJS,Backbone
+Tags: français,JavaScript,NodeJS,Backbone
 Summary: Comment a t'on réécrit une librairie isomorphique Backbone maison ?
 
 Cet article fait écho a [Backbone isomorphique maison : pourquoi ?](/pourquoi-backbone-isomorphique.html) Celui-ci va présenter comment AMIB a été construit.
