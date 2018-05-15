@@ -4,14 +4,14 @@ Slug: webperfs-split-fonts
 Author: Nicolas Bétheuil, Manuel Emeriau, Jonathan Saget, Grégory Paul
 Category: Web
 Tags: français,javascript,webperfs
-Summary: Comment découper une police de caractère en deux nous a fait économiser 220 ko de chargement initial
+Summary: Comment découper une police de caractères en deux nous a fait économiser 220 ko de chargement initial
 
 Après [avoir mis en place SiteSpeed](web-perfs-site-speed.html) et [optimisé le code JavaScript](web-perfs-webpack), nous avons travaillé sur l’optimisation des polices de caractères du site [mappy](https://fr.mappy.com/).
 
 
 ## Constat
 
-En effet, si l’on ignore le poids du code JavaScript, on se rend compte que les 2ème ressources les plus lourdes sont nos polices de caractères :
+Si l’on ignore le poids du code JavaScript, on se rend compte que les 2ème ressources les plus lourdes sont nos polices de caractères :
 
 ![taille avant optimisations](images/web/webperfs/size-before-font.png)
 
@@ -28,20 +28,20 @@ En y regardant de plus près, nous chargeons 5 polices de caractères sur le sit
  - la `Thirsty` (~28 Ko),
  - la `MappyIcons` (*~247 Ko*).
 
-Cette `MappyIcons` est très conséquente car elle contient les icônes utilisé sur le site :
+Cette `MappyIcons` est très conséquente car elle contient les icônes utilisés sur le site :
 
 ![caractères de la police](images/web/webperfs/MappyIcons.png)
 
-Néanmoins, uniquement quelques icônes / caractères sont affichés sur la page d’accueil. Il est ainsi dommage de charger l’ensemble de la police de caractère.
+Néanmoins, uniquement quelques icônes / caractères sont affichés sur la page d’accueil. Il est ainsi dommage de charger l’ensemble de la police de caractères.
 
 ## Optimisations sur les polices de caractères (fonts)
 
-Grâce à l’[attribut CSS `unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) (relativement [bien supporté par ailleurs](https://caniuse.com/#search=unicode-range)), il est possible de découper la police de caractère en 2, en laissant au navigateur web le soin de charger la ou les bons fichiers en fonction des caractères affichés sur le site.
+Grâce à l’[attribut CSS `unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) (relativement [bien supporté par ailleurs](https://caniuse.com/#search=unicode-range)), il est possible de découper la police de caractères en 2, en laissant au navigateur web le soin de charger la ou les bons fichiers en fonction des caractères affichés sur le site.
 
 Après quelques recherches, nous avons trouvé des outils en python (pyftsubset) pour la manipulation de police de caractères.
 
-Pour rendre cela plus transparent dans notre processus de construction, nous les avons encapsulé dans [une image docker dénommé `filter-font`](https://github.com/Mappy/filter-font) ([présente sur docker hub](https://hub.docker.com/r/mappydt/filter-font/)).
-Cette image prend en entré une police de caractère, ainsi qu’une liste de caractères, par exemple :
+Pour rendre cela plus transparent dans notre processus de construction, nous les avons encapsulé dans [une image docker dénommée `filter-font`](https://github.com/Mappy/filter-font) ([présente sur docker hub](https://hub.docker.com/r/mappydt/filter-font/)).
+Cette image prend en entrée une police de caractères, ainsi qu’une liste de caractères, par exemple :
 
 ```
   U+0031 #lieux
@@ -49,9 +49,9 @@ Cette image prend en entré une police de caractère, ainsi qu’une liste de ca
   U+E005 #iti
 ```
 
-pour générer 2 polices de résultat, l’une « light » contenant uniquement les caractères demandées, l’autre « the-rest » avec les caractères restants.
+pour générer 2 polices de résultat, l’une « light » contenant uniquement les caractères demandés, l’autre « the-rest » avec les caractères restants.
 
-Voici un exemple avec les caractères uniquement présent sur la page d’accueil du site Mappy :
+Voici un exemple avec les caractères uniquement présents sur la page d’accueil du site Mappy :
 
 ![découpage des polices](images/web/webperfs/splitted-fonts.png)
 
@@ -64,7 +64,7 @@ Voici les caractères contenus dans la police « light » :
 
 ## Gains
 
-Après ces optimisations, la taille des polices de caractères a drastiquement baissée (gain de 220 Ko) :
+Après ces optimisations, la taille des polices de caractères a drastiquement baissé (gain de 220 Ko) :
 
 ![taille après optimisations](images/web/webperfs/size-after-font.png)
 

@@ -19,7 +19,7 @@ C’est donc sur cette partie que nous nous sommes concentrés dans un premier t
 ## Optimisations sur le JavaScript
 
 
-### Supression de code
+### Suppression de code
 
 Une première action a été de supprimer des fonctionnalités ayant peu de valeur ajoutée pour l’utilisateur.
 
@@ -42,7 +42,7 @@ Cette technique est celle du « [long term caching](https://developers.google.co
 
 Puis, nous avons commencé à découper le code de façon plus fine pour aboutir a de nombreux plus petits fichiers ou `chunks` dans la dénomination `webpack`.
 Dans un premier temps, nous avons abandonné la séparation par langue (qui était intéressant en HTTP/1.1 où l’on cherchait à limiter les fichiers à télécharger mais plus depuis HTTP/2.0, [massivement supporté aujourd’hui](https://caniuse.com/#feat=http2)).
-Puis nous avons extrait certaines parties de code qui n’était chargé sur sur une page dédié (page d’impression, note de frais).
+Puis nous avons extrait certaines parties de code qui n’étaient chargées sur une page dédiée (page d’impression, note de frais).
 Enfin, certains `chunks` sont maintenant chargés automatiquement par `webpack` à l’exécution :
 
 ![découpage au chargement initial](images/web/webperfs/size-js-more-bundles.png)
@@ -76,4 +76,4 @@ Avec ces optimisations, nous sommes passés de 375 Ko de JavaScript (`gzip`) à 
 La séparation du code JavaScript n’est toutefois pas encore totalement finalisée.
 Nous avons en effet encore d’autres point de coupes à effectuer pour diminuer encore la taille du code JavaScript.
 
-Le JavaScript n’étant qu’une partie (certes importante) de notre site, le prochain article détaillera des optimisations sur d’autres types de ressource.
+Le JavaScript n’étant qu’une partie (certes importante) de notre site, le prochain article détaillera des optimisations sur d’autres types de ressources.

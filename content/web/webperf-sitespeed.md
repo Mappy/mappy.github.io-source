@@ -8,17 +8,17 @@ Summary: Comment nous avons automatisé le lancement de mesures de performances 
 
 ## La Performance Web chez Mappy
 
-Nous surveillons depuis longtemps la performances web (couramment abrégé « webperfs ») sur le site [mappy](https://fr.mappy.com/) mais des évenements récents ont remis ce sujet en haut de nos priorités.
+Nous surveillons depuis longtemps la performance web (couramment abrégé « webperfs ») sur le site [mappy](https://fr.mappy.com/) mais des évenements récents ont remis ce sujet en haut de nos priorités.
 
 L’usage du site a en effet changé ces dernières années avec de plus en plus de visites depuis des navigateurs mobiles.
 
-Selon [statcounter](http://gs.statcounter.com/platform-market-share/desktop-mobile/france/#yearly-2016-2018), l’audience mobile en France est passé de ~23 % en 2016 à ~38 % en 2018 :
+Selon [statcounter](http://gs.statcounter.com/platform-market-share/desktop-mobile/france/#yearly-2016-2018), l’audience mobile en France est passée de ~23 % en 2016 à ~38 % en 2018 :
 
 ![statistiques mobile versus bureau](images/web/webperfs/stats-mobile-2018.png)
 
 Ainsi, un temps de chargement acceptable depuis un navigateur de « bureau » hier ne l’est plus forcément depuis un téléphone mobile avec une connexion cellulaire moyenne aujourd’hui.
 
-Par ailleurs, Google a [annoncé la modification de son index](https://webmasters.googleblog.com/2016/11/mobile-first-indexing.html) pour se baser sur les sites mobiles en priorité et tient [compte de leurs vitesses de chargement](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
+Par ailleurs, Google a [annoncé la modification de son index](https://webmasters.googleblog.com/2016/11/mobile-first-indexing.html) pour se baser sur les sites mobiles en priorité et tient [compte de leur vitesse de chargement](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
 
 Nous avons mené plusieurs actions récemment pour améliorer la vitesse de chargement : la mise en place de mesure automatisée puis un cycle itératif entre des actions de performances web et la vérification de leur impact.
 
@@ -35,14 +35,14 @@ Cet outil nous donnait satisfaction mais avec 2 contraintes :
  - n’ayant pas trouvé de solution simple, nous notions manuellement chaque semaine certaines valeurs (speed index, temps de chargement, taille de la page) sur un tableau partagé,
  - son installation, notamment pour maintenant lancer des tests sur des téléphones mobiles, est loin d’être une [partie](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md) [de](https://sites.google.com/a/webpagetest.org/docs/private-instances/locations) [plaisir](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/wptdriver.md).
 
-WebPageTest n’étant idéal pour nos besoins (automatisation du relevé des métriques et lancement sur navigateurs mobiles), nous avons donc comparé WebPageTest avec [LightHouse](https://developers.google.com/web/tools/lighthouse/), [SiteSpeed](https://www.sitespeed.io/) et [Phantomas](https://www.npmjs.com/package/phantomas).
+WebPageTest n’étant pas idéal pour nos besoins (automatisation du relevé des métriques et lancement sur navigateurs mobiles), nous avons donc comparé WebPageTest avec [LightHouse](https://developers.google.com/web/tools/lighthouse/), [SiteSpeed](https://www.sitespeed.io/) et [Phantomas](https://www.npmjs.com/package/phantomas).
 
 Nous utilisons déjà Phantomas pour vérifier que certains indicateurs de performance ne régrèssent pas (taille et nombres des JS/CSS, compression `gzip`, etc).
 
 En parlant de métriques, le W3C a d’ailleurs standardisé une API ([Navigation Timing API](https://www.w3.org/TR/navigation-timing/#process)) permettant de recueillir une quantité assez impressionnante de métriques au sein du navigateur :
 ![Timing overview](images/web/webperfs/timing-overview.png)
 
-Voici la matrice que nous avons utilisé pour prendre notre décision quant aux métriques que proposent ces outils :
+Voici la matrice que nous avons utilisée pour prendre notre décision quant aux métriques que proposent ces outils :
 
 ![Timing overview](images/web/webperfs/decision-matrix.png)
 
@@ -66,7 +66,7 @@ Cela nous permet de générer un graphique présentant la moyenne des « speed i
 
 ![métriques](images/web/webperfs/wall.png)
 
-Ceci est un synthèse mais de nombreuses autres graphiques sont disponibles :
+Ceci est une synthèse mais de nombreuses autres graphiques sont disponibles :
 
 ![grafana](images/web/webperfs/grafana.png)
 
