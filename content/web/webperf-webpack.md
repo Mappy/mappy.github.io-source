@@ -5,6 +5,7 @@ Author: Nicolas Bétheuil, Manuel Emeriau, Jonathan Saget, Grégory Paul
 Category: Web
 Tags: français,javascript,webperfs
 Summary: Comment nous avons utilisé webpack pour découper notre code JavaScript
+Status: draft
 
 Après [avoir mis en place SiteSpeed](web-perfs-site-speed.html), il était temps de procéder à des améliorations de performances.
 
