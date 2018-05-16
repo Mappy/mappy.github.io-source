@@ -3,7 +3,7 @@ Date: 2018-05-24
 Slug: webperfs-split-fonts
 Author: Nicolas Bétheuil, Manuel Emeriau, Jonathan Saget, Grégory Paul
 Category: Web
-Tags: français,javascript,webperfs
+Tags: français,javascript,webperfs,docker
 Summary: Comment découper une police de caractères en deux nous a fait économiser 220 ko de chargement initial
 
 Après [avoir mis en place SiteSpeed](web-perfs-site-speed.html) et [optimisé le code JavaScript](web-perfs-webpack), nous avons travaillé sur l’optimisation des polices de caractères du site [mappy](https://fr.mappy.com/).
@@ -74,8 +74,12 @@ Au final, cette action d’optimisation ainsi que la séparation du code JavaScr
 
 ## Et ensuite ?
 
-La performance web est très importante pour l’utilisateur, mais aussi pour le référencement (les moteurs de recherche en tiennent compte).
-Aussi, la surveillance et l’amélioration des performances doit être intégré dans le processus de développement logiciel, idéalement intégré à l’intégration ou au déploiement continu.
-Il est nécessaire de surveiller les indicateurs de performances et de réagir en cas de pic, et de l’avoir en tête pour chaque nouveau développement.
+Nous avons encore quelques pistes pour encore réduire la taille du JavaScript sur le site [mappy](https://fr.mappy.com).
+Nous espérons donc à nouveau une baisse de notre speed index.
+
+
+De façon plus globale, la performance web est très importante pour l’utilisateur, mais aussi pour le référencement (les moteurs de recherche en tiennent compte).
+Aussi, la surveillance et l’amélioration des performances doit être intégré dans le processus de développement logiciel, idéalement à l’intégration/déploiement continu.
+Il est nécessaire de surveiller les indicateurs de performances et de réagir en cas de baisse de performance, au même titre qu’une régression fonctionnelle.
 
 
