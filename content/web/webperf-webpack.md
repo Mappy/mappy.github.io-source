@@ -31,10 +31,10 @@ La deuxième action, plus conséquente, est de découper le JavaScript en plusie
 Nous utilisions `browserify` pour construire notre JavaScript mais, ce dernier est moins outillé pour répondre à ce problème (popularité en baisse donc écosystème assez pauvre).
 Par conséquent, nous avons tout d’abord migré de `browserify` vers `webpack`.
 
-Nous avons alors séparé notre code en deux avec un « vendors.js » (contenant nos librairies) et le code de notre application.
+Nous avons alors séparé notre code en deux avec un « vendors.js » (contenant nos bibliothèques) et le code de notre application.
 
-Cette séparation a en effet du sens, puisque grâce à des entêtes de cache relativement long (6 mois sur nos fichiers JavaScript), ce fichier vendors.js aura tendance à rester dans le cache du navigateur. Il ne sera donc pas re-téléchargé pour les prochaines visites sur notre site, tant que ce fichier n’aura pas été mis à jour.
-Bien sûr, il convient d’ajouter un suffixe au nom du fichier (une empreinte ou `hash`) qui changera si une librairie était mise à jour.
+Cette séparation a en effet du sens, puisque en utilisant des entêtes de cache relativement long (6 mois sur nos fichiers JavaScript), ce fichier vendors.js aura tendance à rester dans le cache du navigateur. Il ne sera donc pas re-téléchargé pour les prochaines visites sur notre site, tant que ce fichier n’aura pas été mis à jour.
+Bien sûr, il convient d’ajouter un suffixe au nom du fichier (une empreinte ou `hash`) qui changera si une bibliothèque était mise à jour.
 Cette technique est celle du « [long term caching](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching) ».
 
 ![découpage du vendors.js](images/web/webperfs/size-js-vendors.png)
@@ -42,7 +42,7 @@ Cette technique est celle du « [long term caching](https://developers.google.co
 
 Puis, nous avons commencé à découper le code de façon plus fine pour aboutir a de nombreux plus petits fichiers ou `chunks` dans la dénomination `webpack`.
 Dans un premier temps, nous avons abandonné la séparation par langue (qui était intéressant en HTTP/1.1 où l’on cherchait à limiter les fichiers à télécharger mais plus depuis HTTP/2.0, [massivement supporté aujourd’hui](https://caniuse.com/#feat=http2)).
-Puis nous avons extrait certaines parties de code qui n’étaient chargées sur une page dédiée (page d’impression, note de frais).
+Puis nous avons extrait certaines parties de code qui n’étaient chargées que sur une page dédiée (page d’impression, note de frais).
 Enfin, certains `chunks` sont maintenant chargés automatiquement par `webpack` à l’exécution :
 
 ![découpage au chargement initial](images/web/webperfs/size-js-more-bundles.png)

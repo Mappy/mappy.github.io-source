@@ -8,7 +8,7 @@ Summary: Comment nous avons automatisé le lancement de mesures de performances 
 
 ## La Performance Web chez Mappy
 
-Nous surveillons depuis longtemps la performance web (couramment abrégé « webperfs ») sur le site [mappy](https://fr.mappy.com/) mais des évenements récents ont remis ce sujet en haut de nos priorités.
+Nous surveillons depuis longtemps la performance web (couramment abrégé « webperf ») sur le site [mappy](https://fr.mappy.com/) mais l’évolution des usages a mis ce sujet en haut de nos priorités.
 
 L’usage du site a en effet changé ces dernières années avec de plus en plus de visites depuis des navigateurs mobiles.
 
@@ -20,7 +20,7 @@ Ainsi, un temps de chargement acceptable depuis un navigateur de « bureau » hi
 
 Par ailleurs, Google a [annoncé la modification de son index](https://webmasters.googleblog.com/2016/11/mobile-first-indexing.html) pour se baser sur les sites mobiles en priorité et tient [compte de leur vitesse de chargement](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
 
-Nous avons mené plusieurs actions récemment pour améliorer la vitesse de chargement : la mise en place de mesure automatisée puis un cycle itératif entre des actions de performances web et la vérification de leur impact.
+Nous avons mené plusieurs actions récemment pour améliorer la vitesse de chargement en commençant par la mise en place de mesure automatisée puis un cycle itératif entre des actions de performances web et la vérification de leur impact.
 
 ## Des mesures automatisées
 
@@ -37,9 +37,9 @@ Cet outil nous donnait satisfaction mais avec 2 contraintes :
 
 WebPageTest n’étant pas idéal pour nos besoins (automatisation du relevé des métriques et lancement sur navigateurs mobiles), nous avons donc comparé WebPageTest avec [LightHouse](https://developers.google.com/web/tools/lighthouse/), [SiteSpeed](https://www.sitespeed.io/) et [Phantomas](https://www.npmjs.com/package/phantomas).
 
-Nous utilisons déjà Phantomas pour vérifier que certains indicateurs de performance ne régrèssent pas (taille et nombres des JS/CSS, compression `gzip`, etc).
+Nous utilisions déjà Phantomas pour vérifier que certains indicateurs de performance ne régressent pas (taille et nombres des JS/CSS, compression `gzip`, etc).
 
-En parlant de métriques, le W3C a d’ailleurs standardisé une API ([Navigation Timing API](https://www.w3.org/TR/navigation-timing/#process)) permettant de recueillir une quantité assez impressionnante de métriques au sein du navigateur :
+Le W3C a d’ailleurs standardisé une API ([Navigation Timing API](https://www.w3.org/TR/navigation-timing/#process)) permettant de recueillir une quantité assez impressionnante de métriques au sein du navigateur :
 ![Timing overview](images/web/webperfs/timing-overview.png)
 
 Voici la matrice que nous avons utilisée pour prendre notre décision quant aux métriques que proposent ces outils :
@@ -54,8 +54,8 @@ Voici la matrice que nous avons utilisée pour prendre notre décision quant aux
 Nous avons au final porté notre choix sur SiteSpeed pour les raisons suivantes :
 
  - il s’installe très facilement via [Docker](https://www.sitespeed.io/documentation/sitespeed.io/installation/#docker),
- - il permet de se lancer en simulant un environnement mobile (taille du navigateur et bridage de la connexion),
- - il génère les métriques que nous jugeons nécessaires, ainsi que des rapports détaillés incluant une vidéo du chargement de la page comme le fait WebPageTest ([exemple de rapport](https://examples.sitespeed.io/6.0/2017-11-23-23-43-35/) et d’[une vidéo](https://examples.sitespeed.io/6.0/2017-11-23-23-43-35/pages/en.wikipedia.org/wiki/Main_Page/index.html#browsertime)),
+ - il se lance en simulant un environnement mobile (taille du navigateur et bridage de la connexion),
+ - il effectue les métriques que nous jugeons nécessaires, ainsi que des rapports détaillés incluant une vidéo du chargement de la page comme le fait WebPageTest ([exemple de rapport](https://examples.sitespeed.io/6.0/2017-11-23-23-43-35/) et d’[une vidéo](https://examples.sitespeed.io/6.0/2017-11-23-23-43-35/pages/en.wikipedia.org/wiki/Main_Page/index.html#browsertime)),
  - il permet facilement d’exporter des graphiques à mettre sur notre « wall » (écran de supervision des métriques du site web).
 
 Il ne restait plus qu’à programmer le lancement de SiteSpeed toutes les heures sur nos différents environnements et sur quelques pages de notre site.

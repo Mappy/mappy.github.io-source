@@ -38,10 +38,9 @@ Néanmoins, uniquement quelques icônes / caractères sont affichés sur la page
 
 Grâce à l’[attribut CSS `unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) (relativement [bien supporté par ailleurs](https://caniuse.com/#search=unicode-range)), il est possible de découper la police de caractères en 2, en laissant au navigateur web le soin de charger la ou les bons fichiers en fonction des caractères affichés sur le site.
 
-Après quelques recherches, nous avons trouvé des outils en python (pyftsubset) pour la manipulation de police de caractères.
+Après quelques recherches, nous avons trouvé un outil en python (pyftsubset) pour la manipulation de police de caractères.
 
-Pour rendre cela plus transparent dans notre processus de construction, nous les avons encapsulé dans [une image docker dénommée `filter-font`](https://github.com/Mappy/filter-font) ([présente sur docker hub](https://hub.docker.com/r/mappydt/filter-font/)).
-Cette image prend en entrée une police de caractères, ainsi qu’une liste de caractères, par exemple :
+Pour rendre cela plus transparent dans notre processus de construction, nous l’avons encapsulé dans [une image docker dénommée `filter-font`](https://github.com/Mappy/filter-font) ([présente sur docker hub](https://hub.docker.com/r/mappydt/filter-font/)), prenant en entrée une police de caractères, ainsi qu’une liste de caractères, par exemple :
 
 ```
   U+0031 #lieux
