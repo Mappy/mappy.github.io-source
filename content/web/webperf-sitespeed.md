@@ -1,5 +1,5 @@
 Title: Automatiser vos relevés de webperfs
-Date: 2018-05-16
+Date: 2018-05-18
 Slug: webperfs-sitespeed
 Author: Nicolas Bétheuil, Manuel Emeriau, Jonathan Saget, Grégory Paul
 Category: Web
