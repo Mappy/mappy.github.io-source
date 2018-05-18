@@ -66,7 +66,7 @@ Cela nous permet de générer un graphique présentant la moyenne des « speed i
 
 ![métriques](images/web/webperfs/wall.png)
 
-Ceci est une synthèse mais de nombreuses autres graphiques sont disponibles :
+Ceci est une synthèse mais de nombreux autres graphiques sont disponibles :
 
 ![grafana](images/web/webperfs/grafana.png)
 
