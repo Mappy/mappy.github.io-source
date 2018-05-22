@@ -6,7 +6,7 @@ Category: Web
 Tags: français,javascript,webperfs
 Summary: Comment nous avons utilisé webpack pour découper notre code JavaScript
 
-Après [avoir mis en place SiteSpeed](webperfs-sitespeed.html), il était temps de procéder à des améliorations de performances.
+Après [avoir mis en place SiteSpeed](webperfs-sitespeed), il était temps de procéder à des améliorations de performances.
 
 En regardant la composition de nos pages web (grâce à SiteSpeed), on se rend compte que le JavaScript en est la plus grosse partie du site [mappy](https://fr.mappy.com/) :
 
