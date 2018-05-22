@@ -73,4 +73,4 @@ Ceci est une synthèse mais de nombreux autres graphiques sont disponibles :
 Vous pouvez découvrir un [exemple intéractif testant wikipedia](https://dashboard.sitespeed.io/d/000000043/page-summary?orgId=1).
 
 
-Cette première étape finalisée, il est temps de passer aux optimisations, qui feront l’objet de prochains articles.
+Cette première étape finalisée, il est temps de passer aux optimisations, qui feront l’objet de [prochains articles](webperfs-webpack).
