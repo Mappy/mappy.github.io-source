@@ -6,13 +6,13 @@ Category: Web
 Tags: français,javascript,webperfs
 Summary: Comment nous avons utilisé webpack pour découper notre code JavaScript
 
-Après [avoir mis en place SiteSpeed](web-perfs-site-speed.html), il était temps de procéder à des améliorations de performances.
+Après [avoir mis en place SiteSpeed](webperfs-sitespeed.html), il était temps de procéder à des améliorations de performances.
 
 En regardant la composition de nos pages web (grâce à SiteSpeed), on se rend compte que le JavaScript en est la plus grosse partie du site [mappy](https://fr.mappy.com/) :
 
 ![taille avant optimisations](images/web/webperfs/size-before-js.png)
 
-Les barres bleues correspondent à la taille du contenu décompréssé, les barres vertes au contenu compressé (`gzip`).
+_Les barres bleues correspondent à la taille du contenu non compressé, les barres vertes au contenu compressé (`gzip`)._
 
 C’est donc sur cette partie que nous nous sommes concentrés dans un premier temps.
 
@@ -28,7 +28,7 @@ Une première action a été de supprimer des fonctionnalités ayant peu de vale
 
 La deuxième action, plus conséquente, est de découper le JavaScript en plusieurs parties, pour ne charger que le minimum de code par page.
 
-Nous utilisions `browserify` pour construire notre JavaScript mais, ce dernier est moins outillé pour répondre à ce problème (popularité en baisse donc écosystème assez pauvre).
+Nous utilisions `browserify` pour construire notre JavaScript mais ce dernier est moins outillé pour répondre à ce besoin (popularité en baisse donc écosystème assez pauvre).
 Par conséquent, nous avons tout d’abord migré de `browserify` vers `webpack`.
 
 Nous avons alors séparé notre code en deux avec un « vendors.js » (contenant nos bibliothèques) et le code de notre application.
@@ -52,6 +52,8 @@ On remarque une diminution de 13 Ko par rapport à l’exemple précédent.
 Et, au click sur le bouton itinéraire, le code nécessaire se charge à la volée :
 
 ![découpage de la partie itinéraire](images/web/webperfs/size-js-bundle-iti.png)
+
+_La resource JavaScript 1.9798069481970534e737.js est le découpage via webpack du code de l’itinéraire._
 
 
 Voici une autre représentation avant / après via [WebPack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), un formidable outil pour inspecter les `chunks` `webpack` :
