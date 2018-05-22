@@ -78,4 +78,4 @@ Avec ces optimisations, nous sommes passés de 375 Ko de JavaScript (`gzip`) à 
 La séparation du code JavaScript n’est toutefois pas encore totalement finalisée.
 Nous avons en effet encore d’autres point de coupes à effectuer pour diminuer encore la taille du code JavaScript.
 
-Le JavaScript n’étant qu’une partie (certes importante) de notre site, le prochain article détaillera des optimisations sur d’autres types de ressources.
+Le JavaScript n’étant qu’une partie (certes importante) de notre site, le [prochain article](webperfs-split-fonts) détaillera des optimisations sur d’autres types de ressources.

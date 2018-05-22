@@ -1,13 +1,12 @@
 Title: Découpage des polices de caractères
-Date: 2018-05-24
+Date: 2018-05-25
 Slug: webperfs-split-fonts
 Author: Nicolas Bétheuil, Manuel Emeriau, Jonathan Saget, Grégory Paul
 Category: Web
 Tags: français,javascript,webperfs,docker
 Summary: Comment découper une police de caractères en deux nous a fait économiser 220 ko de chargement initial
-Status: draft
 
-Après [avoir mis en place SiteSpeed](web-perfs-site-speed.html) et [optimisé le code JavaScript](web-perfs-webpack), nous avons travaillé sur l’optimisation des polices de caractères du site [mappy](https://fr.mappy.com/).
+Après [avoir mis en place SiteSpeed](web-perfs-site-speed) et [optimisé le code JavaScript](web-perfs-webpack), nous avons travaillé sur l’optimisation des polices de caractères du site [mappy](https://fr.mappy.com/).
 
 
 ## Constat
