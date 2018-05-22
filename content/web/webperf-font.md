@@ -16,7 +16,7 @@ Si l’on ignore le poids du code JavaScript, on se rend compte que les 2ème re
 
 ![taille avant optimisations](images/web/webperfs/size-before-font.png)
 
-Les barres bleues correspondent à la taille du contenu décompréssé, les barres vertes au contenu compressé (`gzip`).
+_Les barres bleues correspondent à la taille du contenu non compressé, les barres vertes au contenu compressé (`gzip`)._
 Les polices de caractères sont compressées, ce qui explique que les 2 barres aient la même taille.
 
 Les polices (ou `fonts`) sont quasiment aussi lourdes que notre code JavaScript, d’où l’intérêt de chercher à les faire « maigrir ».
