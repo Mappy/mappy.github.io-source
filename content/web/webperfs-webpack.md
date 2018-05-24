@@ -6,7 +6,7 @@ Category: Web
 Tags: français,javascript,webperfs
 Summary: Comment nous avons utilisé webpack pour découper notre code JavaScript
 
-Après [avoir mis en place SiteSpeed](webperfs-sitespeed), il était temps de procéder à des améliorations de performances.
+Après [avoir mis en place SiteSpeed](webperfs-sitespeed.html), il était temps de procéder à des améliorations de performances.
 
 En regardant la composition de nos pages web (grâce à SiteSpeed), on se rend compte que le JavaScript en est la plus grosse partie du site [mappy](https://fr.mappy.com/) :
 
@@ -78,4 +78,4 @@ Avec ces optimisations, nous sommes passés de 375 Ko de JavaScript (`gzip`) à 
 La séparation du code JavaScript n’est toutefois pas encore totalement finalisée.
 Nous avons en effet encore d’autres point de coupes à effectuer pour diminuer encore la taille du code JavaScript.
 
-Le JavaScript n’étant qu’une partie (certes importante) de notre site, le [prochain article](webperfs-split-fonts) détaillera des optimisations sur d’autres types de ressources.
+Le JavaScript n’étant qu’une partie (certes importante) de notre site, le [prochain article](webperfs-split-fonts.html) détaillera des optimisations sur d’autres types de ressources.

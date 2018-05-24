@@ -6,7 +6,7 @@ Category: Web
 Tags: français,javascript,webperfs,docker
 Summary: Comment découper une police de caractères en deux nous a fait économiser 220 ko de chargement initial
 
-Après [avoir mis en place SiteSpeed](web-perfs-site-speed) et [optimisé le code JavaScript](web-perfs-webpack), nous avons travaillé sur l’optimisation des polices de caractères du site [mappy](https://fr.mappy.com/).
+Après [avoir mis en place SiteSpeed](webperfs-sitespeed.html) et [optimisé le code JavaScript](webperfs-webpack.html), nous avons travaillé sur l’optimisation des polices de caractères du site [mappy](https://fr.mappy.com/).
 
 
 ## Constat
