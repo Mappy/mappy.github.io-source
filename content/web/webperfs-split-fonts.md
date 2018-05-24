@@ -11,14 +11,13 @@ Après [avoir mis en place SiteSpeed](webperfs-sitespeed.html) et [optimisé le 
 
 ## Constat
 
-Si l’on ignore le poids du code JavaScript, on se rend compte que les 2ème ressources les plus lourdes sont nos polices de caractères :
+Nous avions vu que le Javascript était la ressource la plus lourde chargée sur le site.
+Mais en ne tenant compte que du poids « gzipé » (ce qui nous intéresse au final) on se rend compte que les polices de caractères sont quasiment aussi lourdes.
 
 ![taille avant optimisations](images/web/webperfs/size-before-font.png)
 
 _Les barres bleues correspondent à la taille du contenu non compressé, les barres vertes au contenu compressé (`gzip`)._
 Les polices de caractères sont compressées, ce qui explique que les 2 barres aient la même taille.
-
-Les polices (ou `fonts`) sont quasiment aussi lourdes que notre code JavaScript, d’où l’intérêt de chercher à les faire « maigrir ».
 
 En y regardant de plus près, nous chargeons 5 polices de caractères sur le site :
 
@@ -32,15 +31,15 @@ Cette `MappyIcons` est très conséquente car elle contient les icônes utilisé
 
 ![caractères de la police](images/web/webperfs/MappyIcons.png)
 
-Néanmoins, uniquement quelques icônes / caractères sont affichés sur la page d’accueil. Il est ainsi dommage de charger l’ensemble de la police de caractères.
+Néanmoins, seuls quelques caractères (icônes) sont utilisés sur la page d’accueil. Il est ainsi dommage de charger l’ensemble de la police de caractères.
 
 ## Optimisations sur les polices de caractères (fonts)
 
-Grâce à l’[attribut CSS `unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) (relativement [bien supporté par ailleurs](https://caniuse.com/#search=unicode-range)), il est possible de découper la police de caractères en 2, en laissant au navigateur web le soin de charger la ou les bons fichiers en fonction des caractères affichés sur le site.
+Grâce à l’[attribut CSS `unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) (relativement [bien supporté](https://caniuse.com/#search=unicode-range)), il est possible de découper la police de caractères en 2, en laissant au navigateur web le soin de charger la ou les bons fichiers en fonction des caractères affichés sur le site.
 
-Après quelques recherches, nous avons trouvé un outil en python (pyftsubset) pour la manipulation de police de caractères.
+Après quelques recherches, nous avons trouvé un outil en python (pyftsubset) pour la manipulation de polices de caractères.
 
-Pour rendre cela plus transparent dans notre processus de construction, nous l’avons encapsulé dans [une image docker dénommée `filter-font`](https://github.com/Mappy/filter-font) ([présente sur docker hub](https://hub.docker.com/r/mappydt/filter-font/)), prenant en entrée une police de caractères, ainsi qu’une liste de caractères, par exemple :
+Pour rendre cela plus transparent dans notre processus de construction, nous l’avons encapsulé dans [une image docker dénommée `filter-font`](https://github.com/Mappy/filter-font) ([présente sur docker hub](https://hub.docker.com/r/mappydt/filter-font/)), prenant en entrée une police de caractères ainsi qu’une liste de caractères, par exemple :
 
 ```
   U+0031 #lieux
@@ -78,7 +77,7 @@ Nous espérons donc à nouveau une baisse de notre speed index.
 
 
 De façon plus globale, la performance web est très importante pour l’utilisateur, mais aussi pour le référencement (les moteurs de recherche en tiennent compte).
-Aussi, la surveillance et l’amélioration des performances doit être intégré dans le processus de développement logiciel, idéalement à l’intégration/déploiement continu.
+Aussi, la surveillance et l’amélioration des performances doivent être intégrées dans le processus de développement logiciel, idéalement à l’intégration/déploiement continu.
 Il est nécessaire de surveiller les indicateurs de performances et de réagir en cas de baisse de performance, au même titre qu’une régression fonctionnelle.
 
 
