@@ -2,6 +2,7 @@ Title: mappy.com : de PHP à node.js
 Date: 2017-01-26
 Slug: mappy-com-de-php-a-nodejs
 Author: Grégory Paul
+Category: Web
 Tags: français,javascript,node.js
 Summary: Cet article présente la migration du site mappy.com de PHP à node.js
 
