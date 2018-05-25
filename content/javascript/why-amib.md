@@ -2,7 +2,8 @@ Title: Backbone isomorphique maison : pourquoi ?
 Date: 2018-01-10
 Slug: pourquoi-backbone-isomorphique
 Author: Nicolas Bétheuil
-Tags: français,JavaScript,NodeJS,backbone
+Category: Web
+Tags: français,javascript,node.js,backbone
 Summary: Pourquoi-a-t'on réécrit une librairie isomorphique basée sur backbone ?
 
 Vous l'avez peut-être remarqué, nous avons refait une partie du site il y a bien six mois maintenant : les itinéraires. Nous appelons cela le multipath (prononcer [moultipaðe](https://www.anglaisfacile.com/exercices/exercice-anglais-2/exercice-anglais-66477.php))
