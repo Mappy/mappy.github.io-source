@@ -4,13 +4,15 @@ Date: 2018-06-08
 Tags: opensource,sotm,osm
 Status: draft
 
-Nous avons été 6 Mappy à pouvoir aller à State Of The Map France 2018 près de Bordeaux, à Pessac.
+Nous avons été 6 Mappy à avoir la chance d'aller à State Of The Map France 2018 près de Bordeaux, à Pessac.
 
-Ci dessous le document rédigé conjointement par les différents participants
+<img src="//sotm2018.openstreetmap.fr/images/sotm2018_website2.png" width="400">
+
+Ci dessous le compte-rendu rédigé conjointement par les différents participants
 
 # Map Contrib Next
 
-## Fonctionalité principale
+## Fonctionnalité principale
 Pouvoir éditer une carte en se fixant un thème (et éventuellement un territoire) précis.
 
 Les organisateurs de la cartoparty ont un accès utilisateur avancé, les autres participants une interface simplifiée et agréable.
@@ -22,7 +24,7 @@ Les organisateurs de la cartoparty ont un accès utilisateur avancé, les autres
  - [leaflet nectarivore](https://github.com/osmlab/leaflet-nectarivore)
    - permet d'intégrer facilement de la donnée de différentes API dans une carte leaflet
  - OSM UI
-   - Une liste de composant UI, spécifique à l'édition OSM (un peu comme un bootstrap OSM ?)
+   - Une liste de composants UI, spécifique à l'édition OSM (un peu comme un bootstrap OSM ?).
 
 ## Démo
 
@@ -35,11 +37,11 @@ Les organisateurs de la cartoparty ont un accès utilisateur avancé, les autres
 
 # Carto Participative
 
-[umap](https://umap.openstreetmap.fr/en/map/new-data_1#12/51.7878/7.6717) plutôt que JOSM ou même ID Editor
+[umap](https://umap.openstreetmap.fr/en/map/new-data_1#12/51.7878/7.6717) plutôt que JOSM ou même ID Editor.
 
 # OSM Togo
 
-Communauté active, qui montre la puissance d'OSM face à des acteurs étatiques / multinationales, même quand les photo aériennes sont de mauvaises qualité.
+Communauté active, qui montre la puissance d'OSM face à des acteurs étatiques / multinationales, même quand les photos aériennes sont de mauvaise qualité.
 
 ![](/images/sokode_google.png) ![](/images/sokode_osm.png)
 
@@ -58,13 +60,13 @@ Communauté active, qui montre la puissance d'OSM face à des acteurs étatiques
 [présentation](https://fr.slideshare.net/cartocite/acquisition-et-maintenance-des-donnes-vlo-sur-openstreetmap)
 
 ## Itinéraire
- - piste cyclable en hollande autorisée au scooter mais modélisée de la même façon dans OSM
+ - piste cyclable en Hollande autorisées au scooter mais modélisées de la même façon dans OSM.
 
 ## Les vélos routes dans OSM
-Les vélos routes sont à la fois des itinéraires touristiques définis (La Loire à Vélo) et des euro-vélo-route également reconnus (eurovélo 6).
+Les vélos routes sont à la fois des itinéraires touristiques définis (La Loire à Vélo) et des euro-véloroutes également reconnus (eurovélo 6).
 
 ### Le problème de la "supra-relation"
-En pratique les tronçons cyclables sont tous attachés à une même et unique relation (ex : EV6) qui peut faire des centaines de km de long. La préconisation est d'éviter ce genre de supra-relation. Recemment par exemple deux contributeurs ont voulu l'éditer en même temps...
+En pratique les tronçons cyclables sont tous attachés à une même et unique relation (ex : EV6) qui peut faire des centaines de km de long. La préconisation est d'éviter ce genre de supra-relation. Récemment par exemple deux contributeurs ont voulu l'éditer en même temps…
 
 ### Comment découper cette supra-relation alors ?
 
@@ -72,17 +74,17 @@ La solution "rationnelle" :
 
 - Couper tous les x kilomètres
 - Couper par niveaux administratifs (ex les départements)
-- La solution "touristiques" :
+- La solution "touristique" :
      - Couper par étape-relais
-     - Plus logique pour les contributeurs et les utilisateurs mais pose des problèmes lorsque ces étapes ne sont pas clairement définies dans certaines zones, ou différentes selon le réferentiel européen et régional. Actuellement cette solution est plutôt utilisée en pratique
+     - Plus logique pour les contributeurs et les utilisateurs mais pose des problèmes lorsque ces étapes ne sont pas clairement définies dans certaines zones, ou différentes selon le réferentiel européen et régional. Actuellement cette solution est plutôt utilisée en pratique.
 
-Distinguer l'importance de la voie et l'importance du tronçon cyclable
+Distinguer l'importance de la voie et l'importance du tronçon cyclable.
 
-Faire attention à la distinction primaire/secondaire etc qui correspond à l'importance de la voie routière sur l'ensemble du réseau routier, et la distinction locale/nationale/internationale qui correspond à l'importance de ce passage cyclable dans l'ensemble du réseau vélo route.
+Faire attention à la distinction primaire/secondaire etc qui correspond à l'importance de la voie routière sur l'ensemble du réseau routier, et la distinction locale/nationale/internationale qui correspond à l'importance de ce passage cyclable dans l'ensemble du réseau véloroute.
 
 ### Comment cartographier les liaisons non principales joignant les villes, les liaisons principales, les variantes ?
 
-Une vélo route se composent de liaison la raccrochant aux villes importantes proches, mais aussi de variantes.
+Une véloroute se compose de liaison la raccrochant aux villes importantes proches, mais aussi de variantes.
 
 Il faut trouver un tag pour qualifier les tronçons / les relations en distinguant les trois types de possibilités.
 
@@ -107,9 +109,9 @@ Globalement des choix qui vont différer selon l'objectif final : calculer un it
 
 ##Jungle bus
 
-Constat d'origine : plus de 60% de villes dans le monde n'ont pas de plans de transport public, ni de données exploitables. En gros : il y a des bus, il y a des lignes mais rien d'exploitable en version numérique pour représenter, manipuler, planifier, distribuer cette information. 2% des lignes / arrêts évoluent pour les bus contrairement au métro / tram où les infrasctructures sont plus lourde. Correctement cartographié pour correctement informer est nécessaire
+Constat d'origine : plus de 60% de villes dans le monde n'ont pas de plans de transport public, ni de données exploitables. En gros : il y a des bus, il y a des lignes mais rien d'exploitable en version numérique pour représenter, manipuler, planifier, distribuer cette information. 2% des lignes / arrêts évoluent pour les bus contrairement au métro / tram où les infrasctructures sont plus lourde. Correctement cartographié pour correctement informer est nécessaire.
 
-Un blog avec plein de tuto (extraction, visualisation de la donnée..https://nlehuby.5apps.com/)
+[Un blog avec plein de tuto](https://nlehuby.5apps.com/) (extraction, visualisation de la donnée).
 
 L'application Jungle Bus :
 
@@ -119,7 +121,7 @@ L'application Jungle Bus :
 - traduite en six langues
 - présente sur le monde entier
 
-L'utilisateur peut ainsi visualiser le reseau de bus, avec la position des arrêts et leurs noms notamment.
+L'utilisateur peut ainsi visualiser le réseau de bus, avec la position des arrêts et leurs noms notamment.
 
 Mais il peut aussi éditer cette donnée pour corriger une position erronée ou renseigner des noms manquants.
 
@@ -127,48 +129,47 @@ Cette année, ils ont introduit plusieurs nouveaux outils :
 
 - un chatbot pour modifier encore plus facilement la donnée
 - une interface web qui met en évidence les erreurs à corriger, par type d'erreur : [BIFIDUS](https://jungle-bus.github.io/bifidus/#12/48.851/2.3784)
-- une interface web qui met en évidence un écart de position ou de nom avec d'autre données TC opendata : VARICELLE
+- une interface web qui met en évidence un écart de position ou de nom avec d'autres données TC opendata : VARICELLE
 - la possibilité d'exporter la donnée OSM produite au format GTFS via osm2gtfs (voir point suivant)
 
 Ils ont signé en 2018 un partenariat avec un groupement d'acteurs importants de la mobilité en IDF afin de mettre à jour la data (IDF Mobilités, fabrique des mobilités, naviatia, etc.)
 
 Ce travail concerne 1500 lignes et 40 000 arrêts. Il est conséquent, c'est pourquoi ils ont mis en place un protocole à reproduire pour toute autre demande semblable par la suite :
 
-1. Faire un diagnostic qualité de la donnée existante en comparant la donnée OSM et la donnée "référentielle". Dans cet audit, la position des arrêts OSM et référentiel est comparée, ainsi que leur donnée attributaire, sur une grille d'1 km x 1 km. En moyenne, 80% des arrêts OSM ont le même nom que dans la réferentiel et 75% des
-arrêts OSM sont à moins de 20 m des arrêts de référence
+1. Faire un diagnostic qualité de la donnée existante en comparant la donnée OSM et la donnée "référentielle". Dans cet audit, la position des arrêts OSM et référentiel est comparée, ainsi que leur donnée attributaire, sur une grille d'1 km x 1 km. En moyenne, 80% des arrêts OSM ont le même nom que dans la réferentiel et 75% des arrêts OSM sont à moins de 20 m des arrêts de référence
 2. Ce travail a permis de mettre en évidence des zones en IDF possédant une donnée de faible qualité. Suite à cela des mapathons sur ces zones ont permis/permettront de redresser la qualité
 3. Choisir un mode de gouvernance pour la communauté d'acteurs
-4. Choisir des d'outils pouvant s'inclure aisément aux SI existants
+4. Choisir des outils pouvant s'inclure aisément aux SI existants
 5. S'assurer de la pérennité de la donnée et de l'industrialisation possible de son utilisation
 6. Communiquer (dataviz, etc.) à destination des acteurs insitutionnels
 
 
 ## osmtogtfs
 
-Cet outil permet de transformer les données géographiques (Arrêts, Lignes, nom..) à partir d'une fichier ou d'une url dans un format GTFS le format standard du transport en commun.
+Cet outil permet de transformer les données géographiques (Arrêts, Lignes, nom..) à partir d'un fichier ou d'une url dans un format GTFS le format standard du transport en commun.
 
-Ex au nicaragua de la collecte de données à l'application de transport.
+Ex au Nicaragua de la collecte de données à l'application de transport.
 
 - [osmtogtfs](https://github.com/hiposfer/osmtogtfs) permet de créer un fichier GTFS de la donnée osm, le code permettrait d'adapter la transformation au contexte local
 - Ils ont rajouté les informations d'horaires du transporteur local depuis un fichier .json (OSM collecte rarement des données chaudes c'est un sujet en discussion pour les horaires TC)
-- Ils ont matché les données OSM ([validé via le plugin de josm](https://wiki.openstreetmap.org/wiki/JOSM/Plugins/PT_Assistant)) et celles du transporteur par les noms des arrêts & lignes (pas d'id commun) et ont valider la donné avec GTFS Feed Validator
+- Ils ont matché les données OSM ([validé via le plugin de josm](https://wiki.openstreetmap.org/wiki/JOSM/Plugins/PT_Assistant)) et celles du transporteur par les noms des arrêts & lignes (pas d'id commun) et ont validé la donnée avec GTFS Feed Validator
 - L'application utilisé pour la navigation TC [transportr github](https://github.com/grote/Transportr) [transportr](https://transportr.grobox.de/)
-- Un autre outil mentionné dans une autre présentation [opentripplanner](http://www.opentripplanner.org/) avec calcul d'itinéraire piéton, voiture et TC voir de l'intermodale
+- Un autre outil mentionné dans une autre présentation [opentripplanner](http://www.opentripplanner.org/) avec calcul d'itinéraire piéton, voiture et TC voir de l'intermodal
 
 # La donnée piéton
 ## Cartographier les déplacements en gares par SNCF et Carto cité
 
-Produire des plans de déplacements piéton autour des gares : quels questions se posent ?
+Produire des plans de déplacements piéton autour des gares : quelles questions se posent ?
 
-Une difficulté : beaucoup d'objets sont représentés par des points (ascenseur) ou des lignes (escaliers) alors qu'ils représentent des espaces importants (escalier de plusieurs mètres de large), encombrants et non franchissable (cage d'ascenseur au milieu d'une plateforme).
+Une difficulté : beaucoup d'objets sont représentés par des points (ascenseur) ou des lignes (escaliers) alors qu'ils représentent des espaces importants (escalier de plusieurs mètres de large), encombrants et non franchissables (cage d'ascenseur au milieu d'une plateforme).
 
 Un critère pour mesure l'accessibilité d'un escalier : le nombre de marche.
 
-Une information importante pour les déplacements dans une direction de donnée : le sens d'ouverture des portes à sens uniques.
+Une information importante pour les déplacements dans une direction de donnée : le sens d'ouverture des portes à sens unique.
 
-Des repères pratiques pour les voyageurs : les bâtiments remarquables, ponts, fontaines.. enrichir OSM avec !
+Des repères pratiques pour les voyageurs : les bâtiments remarquables, ponts, fontaines… enrichir OSM avec !
 
-11 gares SNCF bretonnes ont été cartographiées avec précision par carto cité à partir d'images géolocalisées. Avec ces images les objets sont déssinés et renseignés sur JOSM afin d'être intégrés à OSM. Ensuite, la donnée OSM est traitée dans QGIS avec un style graphique SNCF puis sur Inskape afin de produite des cartes finales à destination des voyageurs.
+11 gares SNCF bretonnes ont été cartographiées avec précision par carto cité à partir d'images géolocalisées. Avec ces images les objets sont dessinés et renseignés sur JOSM afin d'être intégrés à OSM. Ensuite, la donnée OSM est traitée dans QGIS avec un style graphique SNCF puis sur Inskape afin de produire des cartes finales à destination des voyageurs.
 
 Pour 11 gares :
 
@@ -188,8 +189,7 @@ Pour 11 gares :
  - <a href="https://en.wikipedia.org/wiki/Tobler%27s_hiking_function">Tobler's hiking function</a> (temps de parcours en fonction de la pente)
 - Pondération moindre lorsque le trajet emprunte un tronçon de trottoir et non de voie. Le temps de trajet en revanche ne doit pas être modifié. Cette donnée est encore trop partielle cependant.
  Possibilité de calculer des itinéraires "thématiques" du type "une balade culturelle". Des tuiles vectorielles T-rex sont prégénérées avec un filtre sur les éléments choisis : objets naturels, objets culturels etc. Les centroides de ces objets sont calculés, regroupés en cluster par distance.Puis un trajet reliant tous les points est calculé avec une direction donnée.
-- Une autre possibilité mentionné serait d'utiliser les données CORINE Land Cover
-(CLC)
+- Une autre possibilité mentionnée serait d'utiliser les données CORINE Land Cover (CLC)
 - Rien sur comment traverser quand il n'y a pas de passage piéton
 
 # La donnée routière / traffic
@@ -198,10 +198,10 @@ Pour 11 gares :
 
 Equipe dédiée au trafic chez Mapbox.
 
-- La constitution de la donnée trafic  à partir des traces GPS des utilisateurs :
+La constitution de la donnée trafic  à partir des traces GPS des utilisateurs :
 - suppression de l'origine et de la destination de la trace
 - tronconnement de la trace
-- mélange de toute les trace sur un tronçon
+- mélange de toute les traces sur un tronçon
 - Ils ont des modèles pour qualifier la donnée GPS (Cycliste, Voiture..)
 
 A la fin, on a une donnée sur la charge de trafic du tronçon sans avoir aucune information individuelle sur les traces de départs, totalement anonymisées.
@@ -236,7 +236,7 @@ Une carte des points d'instruction manquées, rassemblés en groupe, permet de v
 
 [Présentation](https://nextcloud.openstreetmap.fr/index.php/s/mZl1S5P4Rvx0tR9/download?path=%2F&amp;files=19_Cosmogony_QwantResearch.pdf)
 
-Le but de Cosmogony est de reconstruire les relations d'inclusion entre les niveaux administratifs
+Le but de Cosmogony est de reconstruire les relations d'inclusion entre les niveaux administratifs.
 
 Pour se faire
 
@@ -273,13 +273,13 @@ out;
 ```
 https://overpass-turbo.eu/
 
-API destiné au&nbsp;**data consumers** comparable à SparkQL d’un point de vue carto
+API destiné au&nbsp;**data consumers** comparable à SparkQL d’un point de vue carto.
 
-ex de requête : “tous les bars à moins de 200 m d’une station de métro”, “trouve moi les nœuds communs à une route et une voie ferré”
+ex de requête : “tous les bars à moins de 200 m d’une station de métro”, “trouve moi les nœuds communs à une route et une voie ferré”.
 
-OverPass Turbo sur une ville OK, à l’échelle départementale ça commence à être limite
+OverPass Turbo sur une ville OK, à l’échelle départementale ça commence à être limite.
 
-Inconvénient (?) : apprendre le langage OverPass QL (ou faire des requêtes sans vraiment comprendre le langage)
+Inconvénient (?) : apprendre le langage OverPass QL (ou faire des requêtes sans vraiment comprendre le langage).
 
 
 
@@ -293,13 +293,13 @@ Ils définissent eux-mêmes le nombre de classes (après une analyse en composan
 
 <u>Spécification locale</u>: L’étude est faite à l’échelle locale, ainsi un contributeur régulier et expérimenté à Strasbourg pourra être identifié comme novice à Bordeaux (et vice versa, un nouveau contributeur qui a agit plusieurs fois à Bordeaux sera perçu comme expert local).
 
-Ils s’intéressent également aux tags les plus souvent modifiés, étude qu’ils associent avec la classification des profils. (Sous entendu, une modification d’un expert &gt; une modification d’un novice).
+Ils s’intéressent également aux tags les plus souvent modifiés, études qu’ils associent avec la classification des profils. (Sous entendu, une modification d’un expert &gt; une modification d’un novice).
 
 <u>Langage de programmation</u>&nbsp;: Python
 
 [dépôt github](https://github.com/Oslandia/osm-data-classification) 
 
-Une des conclusions, il y a population écrasante de faibles contributeurs, les 2, 5% restants traitent 80% de la donnée
+Une des conclusions, il y a population écrasante de faibles contributeurs, les 2, 5% restants traitent 80% de la donnée.
 
 # Carto humanitaire
 
@@ -307,13 +307,13 @@ CaribeWave est une opération de sensibilisation à la vulnérabilité des popul
 
 # L'usage d'OSM dans les pays du sud
 
-Retour d'expérience avec Haïti ou Madagascar
+Retour d'expérience avec Haïti ou Madagascar.
 
-Il est difficile de construire des communautés qui durent : les gens sont habitués à être aider et à venir pour une compensation (argent pour mapper / nourriture pour une formation à la journée).
+Il est difficile de construire des communautés qui durent : les gens sont habitués à être aidé et à venir pour une compensation (argent pour mapper / nourriture pour une formation à la journée).
 
-Le simple fait de se déplacer pour venir à une formation est déjà compliqué: ça coute et ce n'est clairement pas une priorité dans des pays où ils sont en mode survie.
+Le simple fait de se déplacer pour venir à une formation est déjà compliqué: ça coûte et ce n'est clairement pas une priorité dans des pays où ils sont en mode survie.
 
-L'usage des tags OSM est loin d'être évident dans des pays où la route principale, nationale est une piste régulièrement inondées avec des ornières de 1m. Depuis SOTM, il y a des échanges sur la ML talk-fr: l'usage/praticabilité est dissociée de l'information principal / secondaire avec d'autres infos comme le revêtement. En France, les arrêts de bus changent, là bas, ce sont les ponts, les routes qui peuvent avoir changer après une averse.
+L'usage des tags OSM est loin d'être évident dans des pays où la route principale, nationale est une piste régulièrement inondées avec des ornières de 1m. Depuis SOTM, il y a des échanges sur la ML talk-fr: l'usage/praticabilité est dissociée de l'information principale / secondaire avec d'autres infos comme le revêtement. En France, les arrêts de bus changent, là bas, ce sont les ponts, les routes qui peuvent avoir changer après une averse.
 
 [cartong](http://www.cartong.org)
 [mapathon-missing-maps](http://www.magellium.com/fr/blog/mapathon-missing-maps-2/)
@@ -324,7 +324,7 @@ L'usage des tags OSM est loin d'être évident dans des pays où la route princi
 
 SOGEFI contribue à Mapillary (plateforme collaborative d’imagerie street-level) avec l’équipement Imajbox de la société Imajing (système de capture d’image autonome qui peut se fixer sur voiture, camion, vélo, moto, train…).
 
-Créer des bases de données d’images de la voierie (panneaux de signalisations, panneaux publicitaires…) localisées. Près de 10&nbsp;000&nbsp;000 d’images versées à Mapillary et plus de 30&nbsp;000 km de routes couvertes.
+Créer des bases de données d’images de la voierie (panneaux de signalisations, panneaux publicitaires…) localisées. Près de 10&nbsp;000&nbsp;000 images versées à Mapillary et plus de 30&nbsp;000 km de routes couvertes.
 
 Pour réaliser les traitements d’images, SOGEFI utilise la suite logicielle de photogrammétrie Imajview.
 
@@ -335,36 +335,36 @@ Pour réaliser les traitements d’images, SOGEFI utilise la suite logicielle de
 
 [osmose](http://osmose.openstreetmap.fr/) est un outil qui remonte les possibles anomalies sur une carte
 
-Important travail fait pour rendre compatible les règles OSM avec JOSM et les styles&nbsp;[MapCSS](https://josm.openstreetmap.de/wiki/Help/Styles/MapCSSImplementation) de JOSM avec Osmose
+Important travail fait pour rendre compatible les règles OSM avec JOSM et les styles&nbsp;[MapCSS](https://josm.openstreetmap.de/wiki/Help/Styles/MapCSSImplementation) de JOSM avec Osmose.
 
-Nouvelles fonctionnalités développées: par exemple la similarité de noms entre tronçons proches (rue Lacavé vs rue Lacabé) qui peut être une erreur
+Nouvelles fonctionnalités développées: par exemple la similarité de noms entre tronçons proches (rue Lacavé vs rue Lacabé) qui peut être une erreur.
 
-Des warnings à partir de l'opendata sur des suggestion d'intégration
+Des warnings à partir de l'opendata sur des suggestion d'intégration.
 
 [présentation](https://www.slideshare.net/FredericRodrigo/osmoseqa-qualit-et-intgration-de-donnes): 
 
-Des jobs qui calculent les erreurs d'utilisation des tags à partir du planet, 2j pour traiter la donnée
+Des jobs qui calculent les erreurs d'utilisation des tags à partir du planet, 2j pour traiter la donnée.
 
 ## Mapillary
 
-La contribution / mapping en mode DIY
+La contribution / mapping en mode DIY.
 
-Plusieurs présentations sur l'usage du balais de ménager comme monopode pour une [caméra 360](http://www.lg.com/fr/lg-friends/lg-360-CAM-lgr105)
+Plusieurs présentations sur l'usage du balai de ménager comme monopode pour une [caméra 360](http://www.lg.com/fr/lg-friends/lg-360-CAM-lgr105).
 
-Une perche de 12m pour faire des photos de monuments [exemple](https://www.mapillary.com/app/?lat=44.13803467000835&amp;lng=4.807303570051661&amp;z=17&amp;focus=photo&amp;pKey=ACrothbK7L1N0ZC4RmuAfA&amp;x=0.922026890521998&amp;y=0.4961013356349145&amp;zoom=0) [exemple](https://www.mapillary.com/app/user/zimmy?lat=44.141960833333314&amp;lng=4.804816944444383&amp;z=19.787149667364208&amp;focus=photo&amp;pKey=nzGRo2UFUGt3ZUY4KbyR5Q&amp;x=0.5920152535621718&amp;y=0.44476900377692474&amp;zoom=0&amp;username%5B%5D=zimmy)
+Une perche de 12m pour faire des photos de monuments [exemple](https://www.mapillary.com/app/?lat=44.13803467000835&amp;lng=4.807303570051661&amp;z=17&amp;focus=photo&amp;pKey=ACrothbK7L1N0ZC4RmuAfA&amp;x=0.922026890521998&amp;y=0.4961013356349145&amp;zoom=0) [exemple](https://www.mapillary.com/app/user/zimmy?lat=44.141960833333314&amp;lng=4.804816944444383&amp;z=19.787149667364208&amp;focus=photo&amp;pKey=nzGRo2UFUGt3ZUY4KbyR5Q&amp;x=0.5920152535621718&amp;y=0.44476900377692474&amp;zoom=0&amp;username%5B%5D=zimmy).
 
-La bonne tenue du smartphone et la scénarisation pour faire de bonnes séquences sur
+La bonne tenue du smartphone et la scénarisation pour faire de bonnes séquences.
 
-Comment utiliser mapillary pour l'acquisition à pied, à vélo, puis en voituremapillary
+Comment utiliser mapillary pour l'acquisition à pied, à vélo, puis en voiture mapillary.
 
-Le mat DIY qui tient bien mais bouge quand même au mistral
+Le mat DIY qui tient bien mais bouge quand même au mistral.
 
 ![](https://farm2.staticflickr.com/1753/28655417828_cbbf46720d_h.jpg) ![](/images/28655417828_cbbf46720d_h.jpg)
 
 ## v4mbike
 [stfmani](https://twitter.com/stfmani)
 
-Un mat mis sur un vélo avec 1 raspberry, 4 action cam, arduino, gps ... pleins d'électronique, photo 360 et un soft à fiabiliser
+Un mat mis sur un vélo avec 1 raspberry, 4 action cam, arduino, gps … pleins d'électronique, photo 360 et un soft à fiabiliser.
 
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Le nouveau <a href="https://twitter.com/hashtag/V4MBike?src=hash&amp;ref_src=twsrc%5Etfw">#V4MBike</a> est dans la place !! <a href="https://t.co/B9q534qSsh">pic.twitter.com/B9q534qSsh</a></p>&mdash; Stéphane Péneau (@stfmani) <a href="https://twitter.com/stfmani/status/1001130741978234881?ref_src=twsrc%5Etfw">28 mai 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -372,9 +372,9 @@ Un mat mis sur un vélo avec 1 raspberry, 4 action cam, arduino, gps ... pleins 
 
 ## L'usage d'OSM pour une office du tourisme
 
-La communauté de commune de [seignanx](https://seignanx.carto.guide/)
+La communauté de commune de [seignanx](https://seignanx.carto.guide/).
 
-Le croisement entre des infos éditoriales des OT et la DB OSM
+Le croisement entre des infos éditoriales des OT et la DB OSM.
 
 
 # Le train
@@ -401,4 +401,4 @@ Le croisement entre des infos éditoriales des OT et la DB OSM
 - [Le pad des CR](https://annuel.framapad.org/p/sotmfr-2018)
 
 # Enfin
-Pour ceux qui sont arrivés jusque là, félicitations ! Comme vous pouvez le constater, c'était une crus extrémement riche et diversifié. Forcément, il n'y a ici qu'une partie de ce qui été présenté.
+Pour ceux qui sont arrivés jusque là, félicitations ! Comme vous pouvez le constater, c'était un cru extrémement riche et diversifié. Forcément, il n'y a ici qu'une partie de ce qui été présenté.
