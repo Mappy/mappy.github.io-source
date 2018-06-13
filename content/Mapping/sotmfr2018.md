@@ -1,6 +1,6 @@
 Title: State of The Map France 2018: Mappy y était
 slug: sotmfr2018-mappy
-Date: 2018-06-08
+Date: 2018-06-13
 Tags: opensource,sotm,osm
 
 Nous avons été 6 Mappy à avoir la chance d'aller à State Of The Map France 2018 près de Bordeaux, à Pessac.
